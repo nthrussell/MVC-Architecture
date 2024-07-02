@@ -16,6 +16,7 @@
 		842C2F762C3454D7009AF60D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F752C3454D4009AF60D /* HomeView.swift */; };
 		842C2F792C345B57009AF60D /* UINavigationController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F782C345B4B009AF60D /* UINavigationController_Extension.swift */; };
 		842C2F7B2C345BB2009AF60D /* HomeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F7A2C345B9F009AF60D /* HomeApiService.swift */; };
+		842C2F7D2C345D00009AF60D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F7C2C345CFC009AF60D /* DetailView.swift */; };
 		843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D42C12021000B4C9E2 /* AppDelegate.swift */; };
 		843A67D72C12021000B4C9E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D62C12021000B4C9E2 /* SceneDelegate.swift */; };
 		843A67DE2C12021200B4C9E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A67DD2C12021200B4C9E2 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		842C2F752C3454D4009AF60D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		842C2F782C345B4B009AF60D /* UINavigationController_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController_Extension.swift; sourceTree = "<group>"; };
 		842C2F7A2C345B9F009AF60D /* HomeApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiService.swift; sourceTree = "<group>"; };
+		842C2F7C2C345CFC009AF60D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		843A67D12C12021000B4C9E2 /* MVC-Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVC-Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843A67D42C12021000B4C9E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843A67D62C12021000B4C9E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				842C2F752C3454D4009AF60D /* HomeView.swift */,
+				842C2F7C2C345CFC009AF60D /* DetailView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -281,7 +284,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					843A67D02C12021000B4C9E2 = {
 						CreatedOnToolsVersion = 15.4;
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842C2F762C3454D7009AF60D /* HomeView.swift in Sources */,
+				842C2F7D2C345D00009AF60D /* DetailView.swift in Sources */,
 				842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */,
 				842C2F702C34526E009AF60D /* Constant.swift in Sources */,
 				843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */,
@@ -567,7 +571,6 @@
 		843A67FF2C12021200B4C9E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -586,7 +589,6 @@
 		843A68002C12021200B4C9E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -605,7 +607,6 @@
 		843A68022C12021200B4C9E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -622,7 +623,6 @@
 		843A68032C12021200B4C9E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
