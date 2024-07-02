@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842C2F652C3451C9009AF60D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F642C3451C3009AF60D /* HomeViewController.swift */; };
+		842C2F672C3451F9009AF60D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F662C3451F7009AF60D /* DetailViewController.swift */; };
+		842C2F692C345217009AF60D /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F682C345216009AF60D /* HomeViewCell.swift */; };
+		842C2F6C2C345235009AF60D /* PokemonListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6B2C345234009AF60D /* PokemonListModel.swift */; };
+		842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6D2C345257009AF60D /* NetworkError.swift */; };
+		842C2F702C34526E009AF60D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6F2C34526D009AF60D /* Constant.swift */; };
 		843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D42C12021000B4C9E2 /* AppDelegate.swift */; };
 		843A67D72C12021000B4C9E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D62C12021000B4C9E2 /* SceneDelegate.swift */; };
-		843A67D92C12021000B4C9E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D82C12021000B4C9E2 /* ViewController.swift */; };
-		843A67DC2C12021000B4C9E2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 843A67DB2C12021000B4C9E2 /* Base */; };
 		843A67DE2C12021200B4C9E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A67DD2C12021200B4C9E2 /* Assets.xcassets */; };
-		843A67E12C12021200B4C9E2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 843A67E02C12021200B4C9E2 /* Base */; };
 		843A67EC2C12021200B4C9E2 /* MVC_ArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */; };
 		843A67F62C12021200B4C9E2 /* MVC_ArchitectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67F52C12021200B4C9E2 /* MVC_ArchitectureUITests.swift */; };
 		843A67F82C12021200B4C9E2 /* MVC_ArchitectureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67F72C12021200B4C9E2 /* MVC_ArchitectureUITestsLaunchTests.swift */; };
@@ -36,13 +39,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842C2F642C3451C3009AF60D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		842C2F662C3451F7009AF60D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		842C2F682C345216009AF60D /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		842C2F6B2C345234009AF60D /* PokemonListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListModel.swift; sourceTree = "<group>"; };
+		842C2F6D2C345257009AF60D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		842C2F6F2C34526D009AF60D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		843A67D12C12021000B4C9E2 /* MVC-Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVC-Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843A67D42C12021000B4C9E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843A67D62C12021000B4C9E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		843A67D82C12021000B4C9E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		843A67DB2C12021000B4C9E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843A67DD2C12021200B4C9E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		843A67E02C12021200B4C9E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843A67E22C12021200B4C9E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843A67E72C12021200B4C9E2 /* MVC-ArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVC-ArchitectureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_ArchitectureTests.swift; sourceTree = "<group>"; };
@@ -76,6 +82,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		842C2F612C3451B0009AF60D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				842C2F642C3451C3009AF60D /* HomeViewController.swift */,
+				842C2F662C3451F7009AF60D /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		842C2F622C3451B2009AF60D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				842C2F682C345216009AF60D /* HomeViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		842C2F632C3451B6009AF60D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				842C2F6A2C34522D009AF60D /* Models */,
+				842C2F6F2C34526D009AF60D /* Constant.swift */,
+				842C2F6D2C345257009AF60D /* NetworkError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		842C2F6A2C34522D009AF60D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				842C2F6B2C345234009AF60D /* PokemonListModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		843A67C82C12021000B4C9E2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +140,12 @@
 		843A67D32C12021000B4C9E2 /* MVC-Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				842C2F632C3451B6009AF60D /* Model */,
+				842C2F622C3451B2009AF60D /* View */,
+				842C2F612C3451B0009AF60D /* Controller */,
 				843A67D42C12021000B4C9E2 /* AppDelegate.swift */,
 				843A67D62C12021000B4C9E2 /* SceneDelegate.swift */,
-				843A67D82C12021000B4C9E2 /* ViewController.swift */,
-				843A67DA2C12021000B4C9E2 /* Main.storyboard */,
 				843A67DD2C12021200B4C9E2 /* Assets.xcassets */,
-				843A67DF2C12021200B4C9E2 /* LaunchScreen.storyboard */,
 				843A67E22C12021200B4C9E2 /* Info.plist */,
 			);
 			path = "MVC-Architecture";
@@ -232,8 +273,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				843A67DE2C12021200B4C9E2 /* Assets.xcassets in Resources */,
-				843A67E12C12021200B4C9E2 /* Base in Resources */,
-				843A67DC2C12021000B4C9E2 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843A67D92C12021000B4C9E2 /* ViewController.swift in Sources */,
+				842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */,
+				842C2F702C34526E009AF60D /* Constant.swift in Sources */,
 				843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */,
+				842C2F672C3451F9009AF60D /* DetailViewController.swift in Sources */,
 				843A67D72C12021000B4C9E2 /* SceneDelegate.swift in Sources */,
+				842C2F6C2C345235009AF60D /* PokemonListModel.swift in Sources */,
+				842C2F652C3451C9009AF60D /* HomeViewController.swift in Sources */,
+				842C2F692C345217009AF60D /* HomeViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +339,6 @@
 			targetProxy = 843A67F22C12021200B4C9E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		843A67DA2C12021000B4C9E2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				843A67DB2C12021000B4C9E2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		843A67DF2C12021200B4C9E2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				843A67E02C12021200B4C9E2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		843A67F92C12021200B4C9E2 /* Debug */ = {
@@ -446,7 +471,6 @@
 				INFOPLIST_FILE = "MVC-Architecture/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,7 +497,6 @@
 				INFOPLIST_FILE = "MVC-Architecture/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
