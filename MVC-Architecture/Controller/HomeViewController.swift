@@ -11,20 +11,23 @@ import Combine
 class HomeViewController: UIViewController {
     
     private var homeView = HomeView()
+    private var homeApiService: HomeApiService
+    
+    init(homeApiService: HomeApiService = DefaultHomeApiService()) {
+        self.homeApiService = homeApiService
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         title = "Pokedex"
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .orange
-        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.setUpNavigation()
         
         self.view = homeView
     }
@@ -43,7 +46,7 @@ class HomeViewController: UIViewController {
     }
     
     func callApi() {
-        fetchPokemonList { status in
+        homeApiService.fetchPokemonList { status in
             switch status {
             case .success(let payload):
                 print("payload is:\(payload)")
@@ -53,41 +56,5 @@ class HomeViewController: UIViewController {
                 print("error:\(error)")
             }
         }
-    }
-    
-   
-}
-
-
-
-extension HomeViewController {
-    func fetchPokemonList(completion: @escaping (Result<PokemonListModel, NetworkError>) -> Void) {
-        
-        guard let url = URL(string: Constant.URL.baseURL + "/pokemon") else {
-            completion(.failure(.decodingError))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard error == nil else {
-                completion(.failure(.badURL))
-                return
-            }
-            
-            guard let response  = response as? HTTPURLResponse,
-                  200...299 ~= response.statusCode else {
-                completion(.failure(.invalidResponse))
-                return
-            }
-            
-            if let data = data {
-                do {
-                    let pokeData = try JSONDecoder().decode(PokemonListModel.self, from: data)
-                    completion(.success(pokeData))
-                } catch {
-                    completion(.failure(.decodingError))
-                }
-            }
-        }.resume()
     }
 }

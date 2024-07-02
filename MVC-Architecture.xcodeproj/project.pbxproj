@@ -14,6 +14,8 @@
 		842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6D2C345257009AF60D /* NetworkError.swift */; };
 		842C2F702C34526E009AF60D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6F2C34526D009AF60D /* Constant.swift */; };
 		842C2F762C3454D7009AF60D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F752C3454D4009AF60D /* HomeView.swift */; };
+		842C2F792C345B57009AF60D /* UINavigationController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F782C345B4B009AF60D /* UINavigationController_Extension.swift */; };
+		842C2F7B2C345BB2009AF60D /* HomeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F7A2C345B9F009AF60D /* HomeApiService.swift */; };
 		843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D42C12021000B4C9E2 /* AppDelegate.swift */; };
 		843A67D72C12021000B4C9E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D62C12021000B4C9E2 /* SceneDelegate.swift */; };
 		843A67DE2C12021200B4C9E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A67DD2C12021200B4C9E2 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		842C2F6D2C345257009AF60D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		842C2F6F2C34526D009AF60D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		842C2F752C3454D4009AF60D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		842C2F782C345B4B009AF60D /* UINavigationController_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController_Extension.swift; sourceTree = "<group>"; };
+		842C2F7A2C345B9F009AF60D /* HomeApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiService.swift; sourceTree = "<group>"; };
 		843A67D12C12021000B4C9E2 /* MVC-Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVC-Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843A67D42C12021000B4C9E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843A67D62C12021000B4C9E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				842C2F6A2C34522D009AF60D /* Models */,
 				842C2F722C345492009AF60D /* Service */,
 				842C2F712C345486009AF60D /* Helpers */,
+				842C2F772C345B3C009AF60D /* Extension */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 		842C2F722C345492009AF60D /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				842C2F7A2C345B9F009AF60D /* HomeApiService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -150,6 +156,14 @@
 				842C2F752C3454D4009AF60D /* HomeView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		842C2F772C345B3C009AF60D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				842C2F782C345B4B009AF60D /* UINavigationController_Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		843A67C82C12021000B4C9E2 = {
@@ -337,6 +351,8 @@
 				842C2F702C34526E009AF60D /* Constant.swift in Sources */,
 				843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */,
 				842C2F672C3451F9009AF60D /* DetailViewController.swift in Sources */,
+				842C2F7B2C345BB2009AF60D /* HomeApiService.swift in Sources */,
+				842C2F792C345B57009AF60D /* UINavigationController_Extension.swift in Sources */,
 				843A67D72C12021000B4C9E2 /* SceneDelegate.swift in Sources */,
 				842C2F6C2C345235009AF60D /* PokemonListModel.swift in Sources */,
 				842C2F652C3451C9009AF60D /* HomeViewController.swift in Sources */,
