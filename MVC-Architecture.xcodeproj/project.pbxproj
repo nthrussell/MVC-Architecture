@@ -13,6 +13,7 @@
 		842C2F6C2C345235009AF60D /* PokemonListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6B2C345234009AF60D /* PokemonListModel.swift */; };
 		842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6D2C345257009AF60D /* NetworkError.swift */; };
 		842C2F702C34526E009AF60D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6F2C34526D009AF60D /* Constant.swift */; };
+		842C2F762C3454D7009AF60D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F752C3454D4009AF60D /* HomeView.swift */; };
 		843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D42C12021000B4C9E2 /* AppDelegate.swift */; };
 		843A67D72C12021000B4C9E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D62C12021000B4C9E2 /* SceneDelegate.swift */; };
 		843A67DE2C12021200B4C9E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A67DD2C12021200B4C9E2 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		842C2F6B2C345234009AF60D /* PokemonListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListModel.swift; sourceTree = "<group>"; };
 		842C2F6D2C345257009AF60D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		842C2F6F2C34526D009AF60D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		842C2F752C3454D4009AF60D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		843A67D12C12021000B4C9E2 /* MVC-Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVC-Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843A67D42C12021000B4C9E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843A67D62C12021000B4C9E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +96,8 @@
 		842C2F622C3451B2009AF60D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				842C2F682C345216009AF60D /* HomeViewCell.swift */,
+				842C2F742C3454BA009AF60D /* Screens */,
+				842C2F732C3454B6009AF60D /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				842C2F6A2C34522D009AF60D /* Models */,
-				842C2F6F2C34526D009AF60D /* Constant.swift */,
-				842C2F6D2C345257009AF60D /* NetworkError.swift */,
+				842C2F722C345492009AF60D /* Service */,
+				842C2F712C345486009AF60D /* Helpers */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +118,38 @@
 				842C2F6B2C345234009AF60D /* PokemonListModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		842C2F712C345486009AF60D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				842C2F6F2C34526D009AF60D /* Constant.swift */,
+				842C2F6D2C345257009AF60D /* NetworkError.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		842C2F722C345492009AF60D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		842C2F732C3454B6009AF60D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				842C2F682C345216009AF60D /* HomeViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		842C2F742C3454BA009AF60D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				842C2F752C3454D4009AF60D /* HomeView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		843A67C82C12021000B4C9E2 = {
@@ -297,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842C2F762C3454D7009AF60D /* HomeView.swift in Sources */,
 				842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */,
 				842C2F702C34526E009AF60D /* Constant.swift in Sources */,
 				843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */,
