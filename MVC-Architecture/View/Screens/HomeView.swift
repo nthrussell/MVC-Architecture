@@ -25,7 +25,15 @@ class HomeView: UIView {
         return tableView
     }()
     
+    private(set) lazy var activityindicatorView:UIActivityIndicatorView = {
+        let aiView = UIActivityIndicatorView(style: .medium)
+        aiView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 45)
+        aiView.translatesAutoresizingMaskIntoConstraints = true
+        return aiView
+    }()
+    
     var onTap: ((_ name:String) -> Void)?
+    var fetchMoreData: (() -> Void)?
 
     var pokemonList: [PokemonList] = [PokemonList]()
     private(set) var filteredData: [PokemonList] = [PokemonList]()
@@ -88,10 +96,18 @@ extension HomeView: UITableViewDataSource {
         ) as! HomeViewCell
         
         var data: PokemonList
+        
         if isFiltering() {
             data = filteredData[indexPath.row]
+            activityindicatorView.stopAnimating()
         } else {
             data = pokemonList[indexPath.row]
+        }
+        
+        if (indexPath.row == pokemonList.count - 1) && (!isFiltering()){
+            tableView.tableFooterView = activityindicatorView
+            activityindicatorView.startAnimating()
+            fetchMoreData?()
         }
         
         cell.nameLabel.text = data.name
@@ -107,7 +123,7 @@ extension HomeView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = pokemonList[indexPath.row]
-        onTap?(data.name)
+        onTap?(data.url)
     }
 }
 

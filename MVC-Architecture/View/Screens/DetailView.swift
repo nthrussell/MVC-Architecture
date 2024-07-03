@@ -70,6 +70,7 @@ class DetailView: UIView {
         
         setupLayout()
         
+        nameLabel.text = "Pokedex"
         heightlabel.text = "0.67 cm"
         weightlabel.text = "0.33 grm"
         
@@ -126,9 +127,7 @@ class DetailView: UIView {
 }
 
 #Preview {
-    let vc = DetailViewController()
-    vc.name = "Pokedex"
-    
+   let vc = DetailViewController()
    return vc
 }
 

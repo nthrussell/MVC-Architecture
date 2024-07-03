@@ -6,40 +6,32 @@
 //
 
 import Foundation
+import Combine
 
 protocol HomeApiService {
-    func fetchPokemonList(completion: @escaping (Result<PokemonListModel, NetworkError>) -> Void)
+    func fetchPokemonList(offset: Int) -> AnyPublisher<PokemonListModel, Error>
 }
 
 class DefaultHomeApiService: HomeApiService {
-    func fetchPokemonList(completion: @escaping (Result<PokemonListModel, NetworkError>) -> Void) {
+    func fetchPokemonList(offset: Int) -> AnyPublisher<PokemonListModel, Error> {
+        var url = URL(string: Constant.URL.baseURL + "/pokemon")!
+        url.append(queryItems: [URLQueryItem(name: "limit", value: "\(20)"),
+                               URLQueryItem(name: "offset", value: "\(offset)")])
         
-        guard let url = URL(string: Constant.URL.baseURL + "/pokemon") else {
-            completion(.failure(.decodingError))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard error == nil else {
-                completion(.failure(.badURL))
-                return
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap { response in
+                return try JSONDecoder().decode(PokemonListModel.self, from: response.data)
             }
-            
-            guard let response  = response as? HTTPURLResponse,
-                  200...299 ~= response.statusCode else {
-                completion(.failure(.invalidResponse))
-                return
-            }
-            
-            if let data = data {
-                do {
-                    let pokeData = try JSONDecoder().decode(PokemonListModel.self, from: data)
-                    completion(.success(pokeData))
-                } catch {
-                    completion(.failure(.decodingError))
+            .mapError({ error in
+                switch error {
+                case is URLError:
+                    return NetworkError.badURL
+                case is DecodingError:
+                    return NetworkError.decodingError
+                default:
+                    return NetworkError.unknown
                 }
-            }
-        }.resume()
+            })
+            .eraseToAnyPublisher()
     }
-
 }

@@ -9,16 +9,14 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    var name: String?
+    var url: String?
     private var detailView = DetailView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = name ?? ""
        
         self.view = detailView
-        detailView.nameLabel.text = name
     }
 }

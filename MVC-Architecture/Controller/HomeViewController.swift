@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     
     private var homeView = HomeView()
     private var homeApiService: HomeApiService
+    var cancellable = Set<AnyCancellable>()
     
     init(homeApiService: HomeApiService = DefaultHomeApiService()) {
         self.homeApiService = homeApiService
@@ -34,27 +35,34 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         callApi()
+        fetchMoreData()
         navigate()
     }
     
     func navigate() {
         homeView.onTap = { name in
             let vc = DetailViewController()
-            vc.name = name
+            vc.url = name
             self.show(vc, sender: self)
         }
     }
     
-    func callApi() {
-        homeApiService.fetchPokemonList { status in
-            switch status {
-            case .success(let payload):
-                print("payload is:\(payload)")
-                self.homeView.pokemonList = payload.results
-                self.homeView.reloadTebleView()
-            case .failure(let error):
-                print("error:\(error)")
-            }
+    func fetchMoreData() {
+        homeView.fetchMoreData = {
+            self.callApi()
         }
+    }
+    
+    func callApi() {
+        homeApiService.fetchPokemonList(offset: homeView.pokemonList.count)
+            .sink { status in
+                print("status is:\(status)")
+            } receiveValue: { [weak self] payload in
+                guard let self = self else { return }
+                print("payload is:\(payload)")
+                self.homeView.pokemonList.append(contentsOf: payload.results)
+                self.homeView.reloadTebleView()
+            }
+            .store(in: &cancellable)
     }
 }
