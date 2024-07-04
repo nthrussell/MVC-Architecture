@@ -70,16 +70,22 @@ class DetailView: UIView {
         
         setupLayout()
         
-        nameLabel.text = "Pokedex"
-        heightlabel.text = "0.67 cm"
-        weightlabel.text = "0.33 grm"
-        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         favouriteButton.addGestureRecognizer(gesture)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateUI(data: PokemonDetailModel) {
+        nameLabel.text = data.name
+        heightlabel.text = "\(data.height) cm"
+        weightlabel.text = "\(data.height) grm"
+    }
+    
+    func updateImage(image: UIImage) {
+        imageView.image = image
     }
     
     func setupLayout() {
@@ -127,7 +133,7 @@ class DetailView: UIView {
 }
 
 #Preview {
-   let vc = DetailViewController()
+    let vc = DetailViewController(url: "")
    return vc
 }
 

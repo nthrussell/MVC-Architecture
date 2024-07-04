@@ -40,9 +40,8 @@ class HomeViewController: UIViewController {
     }
     
     func navigate() {
-        homeView.onTap = { name in
-            let vc = DetailViewController()
-            vc.url = name
+        homeView.onTap = { url in
+            let vc = DetailViewController(url: url)
             self.show(vc, sender: self)
         }
     }

@@ -15,7 +15,7 @@ protocol DetailApiService {
 
 class DefaultDetailApiService: DetailApiService {
     func fetchDetail(with url:String) -> AnyPublisher<PokemonDetailModel, Error> {
-        var url = URL(string: url)!
+        let url = URL(string: url)!
         
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
@@ -34,7 +34,7 @@ class DefaultDetailApiService: DetailApiService {
     }
     
     func downloadImage(with url:String) -> AnyPublisher<Data, Never> {
-        var imageUrl = URL(string: url)!
+        let imageUrl = URL(string: url)!
 
         return URLSession.shared.dataTaskPublisher(for: imageUrl)
             .map(\.data)
