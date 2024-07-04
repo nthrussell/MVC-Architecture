@@ -46,7 +46,7 @@ class DetailViewController: UIViewController {
                 print("detail data is:\(data)")
                 guard let self = self else { return }
                 detailView.updateUI(data: data)
-                downloadImage(with: data.sprites.frontDefault)
+               // downloadImage(with: data.sprites.frontDefault)
             }
             .store(in: &cancellable)
     }

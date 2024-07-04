@@ -82,6 +82,8 @@ class DetailView: UIView {
         nameLabel.text = data.name
         heightlabel.text = "\(data.height) cm"
         weightlabel.text = "\(data.height) grm"
+        let url = URL(string: data.sprites.frontDefault)!
+        imageView.getImage(from: url)
     }
     
     func updateImage(image: UIImage) {
