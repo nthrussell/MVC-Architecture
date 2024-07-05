@@ -21,12 +21,13 @@ class DetailView: UIView {
         button.setImage(UIImage(systemName: "heart", withConfiguration: config)?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .normal)
         button.setImage(UIImage(systemName: "heart.fill", withConfiguration: config)?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .selected)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.isHidden = true
         return button
     }()
     
     private(set) lazy var imageView:UIImageView = {
        let imageView = UIImageView()
-        imageView.image = UIImage(named: "pokeImage")
+        //imageView.image = UIImage(named: "pokeImage")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -42,7 +43,7 @@ class DetailView: UIView {
     
     private(set) lazy var weightlabel:UILabel = {
        let label = UILabel()
-        label.text = "Pokemon weight"
+        //label.text = "Pokemon weight"
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -50,11 +51,14 @@ class DetailView: UIView {
     
     private(set) lazy var heightlabel:UILabel = {
        let label = UILabel()
-        label.text = "Pokemon height"
+        //label.text = "Pokemon height"
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    var onTap: ((_ data:PokemonDetailModel) -> Void)?
+    var data: PokemonDetailModel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,11 +83,15 @@ class DetailView: UIView {
     }
     
     func updateUI(data: PokemonDetailModel) {
+        self.data = data
+        
         nameLabel.text = data.name
         heightlabel.text = "\(data.height) cm"
         weightlabel.text = "\(data.height) grm"
+        
         let url = URL(string: data.sprites.frontDefault)!
         imageView.getImage(from: url)
+        favouriteButton.isHidden = false
     }
     
     func updateImage(image: UIImage) {
@@ -129,8 +137,8 @@ class DetailView: UIView {
     
     @objc
     func tapAction() {
-        //favouriteButton.isSelected.toggle()
-        favouriteButton.isSelected = !favouriteButton.isSelected
+        favouriteButton.isSelected.toggle()
+        if let data = self.data { onTap?(data) }
     }
 }
 

@@ -13,11 +13,16 @@ class DetailViewController: UIViewController {
     var url: String
     private var detailView = DetailView()
     private var detailApiService: DetailApiService
+    private var storageProvider: StorageProvider
     var cancellable = Set<AnyCancellable>()
-    
-    init(url: String, detailApiService: DetailApiService = DefaultDetailApiService()) {
+        
+    init(url: String, 
+         detailApiService: DetailApiService = DefaultDetailApiService(),
+         storageProvider: StorageProvider = StorageProvider()
+    ) {
         self.url = url
         self.detailApiService = detailApiService
+        self.storageProvider = storageProvider
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -34,6 +39,29 @@ class DetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         callApi()
+        getAllDataFromCoreData()
+        observeButtonTap()
+    }
+    
+    private func getAllDataFromCoreData() {
+        let data = storageProvider.getAllData()
+        for i in data {
+            print("getAllDataFromCoreData name is:\(String(describing: i.name))")
+        }
+    }
+    
+    private func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel){
+        let data = storageProvider.checkIfPokemonIsFavourite(data: data)
+        print("checkIfPokemonIsInFavouriteList:\(data)")
+        detailView.favouriteButton.isSelected = data ? true : false
+    }
+    
+    func observeButtonTap() {
+        detailView.onTap = { [weak self] data in
+           guard let self = self else { return }
+            print("button tapped")
+            storageProvider.saveData(data: data)
+        }
     }
     
     private func callApi() {
@@ -43,25 +71,10 @@ class DetailViewController: UIViewController {
             .sink { status in
                 print("status is:\(status)")
             } receiveValue: { [weak self] data in
-                print("detail data is:\(data)")
+                //print("detail data is:\(data)")
                 guard let self = self else { return }
                 detailView.updateUI(data: data)
-               // downloadImage(with: data.sprites.frontDefault)
-            }
-            .store(in: &cancellable)
-    }
-    
-    private func downloadImage(with url:String) {
-        detailApiService
-            .downloadImage(with: url)
-            .receive(on: DispatchQueue.main)
-            .sink { status in
-                print("image download status is:\(status)")
-            } receiveValue: { [weak self] data in
-                guard let self = self else { return }
-                print("image data is:\(data)")
-                guard let convertedImage = UIImage(data: data) else { return }
-                detailView.updateImage(image: convertedImage)
+                checkIfPokemonIsInFavouriteList(data: data)
             }
             .store(in: &cancellable)
     }
