@@ -55,7 +55,7 @@ class HomeView: UIView {
     func setupLayout() {
         
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: topAnchor),
+            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             searchBar.leftAnchor.constraint(equalTo: leftAnchor),
             searchBar.rightAnchor.constraint(equalTo: rightAnchor),
             searchBar.heightAnchor.constraint(equalToConstant: 50)
@@ -65,7 +65,7 @@ class HomeView: UIView {
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
             tableView.leftAnchor.constraint(equalTo: leftAnchor),
             tableView.rightAnchor.constraint(equalTo: rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -106,7 +106,6 @@ extension HomeView: UITableViewDataSource {
         
         if (indexPath.row == pokemonList.count - 1) && (!isFiltering()){
             tableView.tableFooterView = activityindicatorView
-            activityindicatorView.startAnimating()
             fetchMoreData?()
         }
         

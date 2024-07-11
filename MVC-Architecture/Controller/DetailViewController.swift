@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import NVActivityIndicatorView
 
 class DetailViewController: UIViewController {
     

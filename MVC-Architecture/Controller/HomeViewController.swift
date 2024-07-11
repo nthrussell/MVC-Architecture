@@ -27,9 +27,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Pokedex"
-        navigationController?.setUpNavigation()
-        
+        navigationController?.navigationBar.topItem?.title = "Pokedex"
         self.view = homeView
     }
     

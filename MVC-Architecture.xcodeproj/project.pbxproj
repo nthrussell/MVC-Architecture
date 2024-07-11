@@ -16,7 +16,6 @@
 		842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6D2C345257009AF60D /* NetworkError.swift */; };
 		842C2F702C34526E009AF60D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6F2C34526D009AF60D /* Constant.swift */; };
 		842C2F762C3454D7009AF60D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F752C3454D4009AF60D /* HomeView.swift */; };
-		842C2F792C345B57009AF60D /* UINavigationController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F782C345B4B009AF60D /* UINavigationController_Extension.swift */; };
 		842C2F7B2C345BB2009AF60D /* HomeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F7A2C345B9F009AF60D /* HomeApiService.swift */; };
 		842C2F7D2C345D00009AF60D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F7C2C345CFC009AF60D /* DetailView.swift */; };
 		843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D42C12021000B4C9E2 /* AppDelegate.swift */; };
@@ -27,6 +26,9 @@
 		843A67F82C12021200B4C9E2 /* MVC_ArchitectureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67F72C12021200B4C9E2 /* MVC_ArchitectureUITestsLaunchTests.swift */; };
 		8444BC012C369AB5007AF43D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8444BC002C369AB5007AF43D /* Kingfisher */; };
 		8444BC052C36A55F007AF43D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444BC042C36A556007AF43D /* UIImageView+Extension.swift */; };
+		84636E012C40263300C93AE7 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84636E002C40263300C93AE7 /* FavouriteViewController.swift */; };
+		84636E032C40392F00C93AE7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84636E022C40392900C93AE7 /* BaseNavigationController.swift */; };
+		847A826A2C3EC80A00530B02 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 847A82692C3EC80A00530B02 /* NVActivityIndicatorView */; };
 		84BDFD332C356DE0003B65BC /* DetailApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFD322C356DDB003B65BC /* DetailApiService.swift */; };
 		84BDFD352C356E81003B65BC /* PokemonDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +60,6 @@
 		842C2F6D2C345257009AF60D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		842C2F6F2C34526D009AF60D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		842C2F752C3454D4009AF60D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		842C2F782C345B4B009AF60D /* UINavigationController_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController_Extension.swift; sourceTree = "<group>"; };
 		842C2F7A2C345B9F009AF60D /* HomeApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiService.swift; sourceTree = "<group>"; };
 		842C2F7C2C345CFC009AF60D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		843A67D12C12021000B4C9E2 /* MVC-Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVC-Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +73,8 @@
 		843A67F52C12021200B4C9E2 /* MVC_ArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_ArchitectureUITests.swift; sourceTree = "<group>"; };
 		843A67F72C12021200B4C9E2 /* MVC_ArchitectureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_ArchitectureUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8444BC042C36A556007AF43D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		84636E002C40263300C93AE7 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		84636E022C40392900C93AE7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		84BDFD322C356DDB003B65BC /* DetailApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApiService.swift; sourceTree = "<group>"; };
 		84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847A826A2C3EC80A00530B02 /* NVActivityIndicatorView in Frameworks */,
 				8444BC012C369AB5007AF43D /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,8 +117,10 @@
 		842C2F612C3451B0009AF60D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84636E022C40392900C93AE7 /* BaseNavigationController.swift */,
 				842C2F642C3451C3009AF60D /* HomeViewController.swift */,
 				842C2F662C3451F7009AF60D /* DetailViewController.swift */,
+				84636E002C40263300C93AE7 /* FavouriteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				8444BC042C36A556007AF43D /* UIImageView+Extension.swift */,
-				842C2F782C345B4B009AF60D /* UINavigationController_Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -216,11 +221,10 @@
 		843A67D32C12021000B4C9E2 /* MVC-Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				84636E042C403D3400C93AE7 /* App */,
 				842C2F632C3451B6009AF60D /* Model */,
 				842C2F622C3451B2009AF60D /* View */,
 				842C2F612C3451B0009AF60D /* Controller */,
-				843A67D42C12021000B4C9E2 /* AppDelegate.swift */,
-				843A67D62C12021000B4C9E2 /* SceneDelegate.swift */,
 				843A67DD2C12021200B4C9E2 /* Assets.xcassets */,
 				843A67E22C12021200B4C9E2 /* Info.plist */,
 				8415333E2C37C800005CB744 /* PokemonDataModel.xcdatamodeld */,
@@ -245,6 +249,15 @@
 			path = "MVC-ArchitectureUITests";
 			sourceTree = "<group>";
 		};
+		84636E042C403D3400C93AE7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				843A67D42C12021000B4C9E2 /* AppDelegate.swift */,
+				843A67D62C12021000B4C9E2 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,6 +276,7 @@
 			name = "MVC-Architecture";
 			packageProductDependencies = (
 				8444BC002C369AB5007AF43D /* Kingfisher */,
+				847A82692C3EC80A00530B02 /* NVActivityIndicatorView */,
 			);
 			productName = "MVC-Architecture";
 			productReference = 843A67D12C12021000B4C9E2 /* MVC-Architecture.app */;
@@ -338,6 +352,7 @@
 			mainGroup = 843A67C82C12021000B4C9E2;
 			packageReferences = (
 				8444BBFF2C369AB5007AF43D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				847A82682C3EC80A00530B02 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 843A67D22C12021000B4C9E2 /* Products */;
 			projectDirPath = "";
@@ -384,6 +399,8 @@
 				842C2F762C3454D7009AF60D /* HomeView.swift in Sources */,
 				841533432C37CA1E005CB744 /* StorageProvider.swift in Sources */,
 				842C2F7D2C345D00009AF60D /* DetailView.swift in Sources */,
+				84636E012C40263300C93AE7 /* FavouriteViewController.swift in Sources */,
+				84636E032C40392F00C93AE7 /* BaseNavigationController.swift in Sources */,
 				84BDFD352C356E81003B65BC /* PokemonDetailModel.swift in Sources */,
 				842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */,
 				842C2F702C34526E009AF60D /* Constant.swift in Sources */,
@@ -391,7 +408,6 @@
 				842C2F672C3451F9009AF60D /* DetailViewController.swift in Sources */,
 				842C2F7B2C345BB2009AF60D /* HomeApiService.swift in Sources */,
 				841533402C37C800005CB744 /* PokemonDataModel.xcdatamodeld in Sources */,
-				842C2F792C345B57009AF60D /* UINavigationController_Extension.swift in Sources */,
 				843A67D72C12021000B4C9E2 /* SceneDelegate.swift in Sources */,
 				842C2F6C2C345235009AF60D /* PokemonListModel.swift in Sources */,
 				842C2F652C3451C9009AF60D /* HomeViewController.swift in Sources */,
@@ -722,6 +738,14 @@
 				minimumVersion = 7.12.0;
 			};
 		};
+		847A82682C3EC80A00530B02 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -729,6 +753,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8444BBFF2C369AB5007AF43D /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		847A82692C3EC80A00530B02 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 847A82682C3EC80A00530B02 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
 		};
 /* End XCSwiftPackageProductDependency section */
 
