@@ -35,16 +35,9 @@ class FavouriteViewController: UIViewController {
     
     func getAllFavourites() {
         let data = storageProvider.getAllData()
-        for i in data {
-           // print("getAllDataFromCoreData name is:\(String(describing: i.name))")
-            let model = PokemonDetailModel.mapFromEntity(i)
-            print("model is:\(model)")
-            print("model name:\(model.name)")
-            print("model height:\(model.height)")
-            print("model weight:\(model.weight)")
-            print("model image:\(model.sprites.frontDefault)")
-        }
+        let mappedData = data.map { PokemonDetailModel.mapFromEntity($0) }
         
-        
+        favouriteView.detailData = mappedData
+        favouriteView.tableView.reloadData()
     }
 }

@@ -18,6 +18,8 @@ class FavouriteView: UIView {
         return tableView
     }()
     
+    var detailData = [PokemonDetailModel]()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -44,7 +46,7 @@ class FavouriteView: UIView {
 
 extension FavouriteView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return detailData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,9 +55,10 @@ extension FavouriteView: UITableViewDataSource {
             for: indexPath
         ) as! FavouriteViewCell
         
-        cell.imageView?.image = UIImage(named: "pokeImage")
-        cell.textLabel?.text = "Some name"
-        cell.detailTextLabel?.text = "Some long detail text with lots of information"
+        let data = detailData[indexPath.row]
+        
+        cell.imageView?.getImage(from: URL(string: data.sprites.frontDefault)!)
+        cell.textLabel?.text = data.name
         
         return cell
     }
