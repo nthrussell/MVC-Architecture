@@ -7,7 +7,6 @@
 
 import UIKit
 import Combine
-import NVActivityIndicatorView
 
 class DetailViewController: UIViewController {
     
@@ -66,6 +65,7 @@ class DetailViewController: UIViewController {
     }
     
     private func callApi() {
+        showProgressSpinner()
         detailApiService
             .fetchDetail(with: url)
             .receive(on: DispatchQueue.main)
@@ -76,6 +76,7 @@ class DetailViewController: UIViewController {
                 guard let self = self else { return }
                 detailView.updateUI(data: data)
                 checkIfPokemonIsInFavouriteList(data: data)
+                hideProgressSpinner()
             }
             .store(in: &cancellable)
     }

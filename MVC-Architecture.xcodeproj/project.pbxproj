@@ -28,7 +28,8 @@
 		8444BC052C36A55F007AF43D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444BC042C36A556007AF43D /* UIImageView+Extension.swift */; };
 		84636E012C40263300C93AE7 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84636E002C40263300C93AE7 /* FavouriteViewController.swift */; };
 		84636E032C40392F00C93AE7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84636E022C40392900C93AE7 /* BaseNavigationController.swift */; };
-		847A826A2C3EC80A00530B02 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 847A82692C3EC80A00530B02 /* NVActivityIndicatorView */; };
+		8498897D2C41021800BB4E55 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8498897C2C41021800BB4E55 /* SVProgressHUD */; };
+		8498897F2C4102CF00BB4E55 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498897E2C4102C600BB4E55 /* UIViewController+Extension.swift */; };
 		84BDFD332C356DE0003B65BC /* DetailApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFD322C356DDB003B65BC /* DetailApiService.swift */; };
 		84BDFD352C356E81003B65BC /* PokemonDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		8444BC042C36A556007AF43D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		84636E002C40263300C93AE7 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		84636E022C40392900C93AE7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		8498897E2C4102C600BB4E55 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		84BDFD322C356DDB003B65BC /* DetailApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApiService.swift; sourceTree = "<group>"; };
 		84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847A826A2C3EC80A00530B02 /* NVActivityIndicatorView in Frameworks */,
+				8498897D2C41021800BB4E55 /* SVProgressHUD in Frameworks */,
 				8444BC012C369AB5007AF43D /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,7 +119,6 @@
 		842C2F612C3451B0009AF60D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				84636E022C40392900C93AE7 /* BaseNavigationController.swift */,
 				842C2F642C3451C3009AF60D /* HomeViewController.swift */,
 				842C2F662C3451F7009AF60D /* DetailViewController.swift */,
 				84636E002C40263300C93AE7 /* FavouriteViewController.swift */,
@@ -158,6 +159,7 @@
 		842C2F712C345486009AF60D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				84636E022C40392900C93AE7 /* BaseNavigationController.swift */,
 				842C2F6F2C34526D009AF60D /* Constant.swift */,
 				842C2F6D2C345257009AF60D /* NetworkError.swift */,
 			);
@@ -193,6 +195,7 @@
 		842C2F772C345B3C009AF60D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8498897E2C4102C600BB4E55 /* UIViewController+Extension.swift */,
 				8444BC042C36A556007AF43D /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
@@ -276,7 +279,7 @@
 			name = "MVC-Architecture";
 			packageProductDependencies = (
 				8444BC002C369AB5007AF43D /* Kingfisher */,
-				847A82692C3EC80A00530B02 /* NVActivityIndicatorView */,
+				8498897C2C41021800BB4E55 /* SVProgressHUD */,
 			);
 			productName = "MVC-Architecture";
 			productReference = 843A67D12C12021000B4C9E2 /* MVC-Architecture.app */;
@@ -352,7 +355,7 @@
 			mainGroup = 843A67C82C12021000B4C9E2;
 			packageReferences = (
 				8444BBFF2C369AB5007AF43D /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				847A82682C3EC80A00530B02 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				8498897B2C41021800BB4E55 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 			);
 			productRefGroup = 843A67D22C12021000B4C9E2 /* Products */;
 			projectDirPath = "";
@@ -403,6 +406,7 @@
 				84636E032C40392F00C93AE7 /* BaseNavigationController.swift in Sources */,
 				84BDFD352C356E81003B65BC /* PokemonDetailModel.swift in Sources */,
 				842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */,
+				8498897F2C4102CF00BB4E55 /* UIViewController+Extension.swift in Sources */,
 				842C2F702C34526E009AF60D /* Constant.swift in Sources */,
 				843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */,
 				842C2F672C3451F9009AF60D /* DetailViewController.swift in Sources */,
@@ -738,12 +742,12 @@
 				minimumVersion = 7.12.0;
 			};
 		};
-		847A82682C3EC80A00530B02 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+		8498897B2C41021800BB4E55 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.0;
+				minimumVersion = 2.3.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -754,10 +758,10 @@
 			package = 8444BBFF2C369AB5007AF43D /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		847A82692C3EC80A00530B02 /* NVActivityIndicatorView */ = {
+		8498897C2C41021800BB4E55 /* SVProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 847A82682C3EC80A00530B02 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
-			productName = NVActivityIndicatorView;
+			package = 8498897B2C41021800BB4E55 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 
