@@ -40,6 +40,17 @@ extension StorageProvider {
             print("failed to save pokemonDetail:\(error)")
         }
     }
+    
+    func saveContext() {
+        do {
+            try persistentContainer.viewContext.save()
+            print("pokemonDetail saved successfully")
+        } catch {
+            persistentContainer.viewContext.rollback()
+            print("failed to save pokemonDetail:\(error)")
+        }
+    }
+
 }
 
 extension StorageProvider {

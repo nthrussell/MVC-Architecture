@@ -39,15 +39,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         callApi()
-        getAllDataFromCoreData()
         observeButtonTap()
-    }
-    
-    private func getAllDataFromCoreData() {
-        let data = storageProvider.getAllData()
-        for i in data {
-            print("getAllDataFromCoreData name is:\(String(describing: i.name))")
-        }
     }
     
     private func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel){
