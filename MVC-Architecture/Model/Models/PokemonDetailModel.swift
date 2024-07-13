@@ -18,7 +18,7 @@ struct PokemonDetailModel: Codable {
 extension PokemonDetailModel: ModelEntityMapProtocol {
     typealias EntityType = PokemonDetail
 
-    func mapToEntity(_ context: NSManagedObjectContext) -> PokemonDetail {
+    func mapToEntity(_ context: NSManagedObjectContext) -> EntityType {
         let pokemonDetail: PokemonDetail = .init(context: context)
         pokemonDetail.name = name
         pokemonDetail.height = Int64(height)
@@ -33,7 +33,7 @@ extension PokemonDetailModel: ModelEntityMapProtocol {
         return pokemonDetail
     }
     
-    static func mapFromEntity(_ entity: PokemonDetail) -> PokemonDetailModel {
+    static func mapFromEntity(_ entity: EntityType) -> PokemonDetailModel {
         
         guard let sprite = entity.sprites else {
             return .init(
@@ -43,11 +43,7 @@ extension PokemonDetailModel: ModelEntityMapProtocol {
                 weight: Int(entity.weight))
         }
         
-        let spriteModel: SpritesModel = sprite.map { SpritesModel.mapFromEntity($0 as! Sprite) }.first! //SpritesModel(frontDefault: "")
-        
-//        for i in sprite {
-//            spriteModel = SpritesModel.mapFromEntity(i as! Sprite)
-//        }
+        let spriteModel: SpritesModel = sprite.map { SpritesModel.mapFromEntity($0 as! Sprite) }.first!
                 
         return .init(height: Int(entity.height),
                      name: entity.name ?? "",

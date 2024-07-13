@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FavouriteViewController: UIViewController {
 
@@ -27,17 +28,34 @@ class FavouriteViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.topItem?.title = "My Favourites"
         self.view = favouriteView
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(contextObjectsDidChange),
+                                               name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
+                                               object: storageProvider.persistentContainer.viewContext)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         getAllFavourites()
+        deleteFavourite()
     }
     
-    func getAllFavourites() {
-        let data = storageProvider.getAllData()
-        let mappedData = data.map { PokemonDetailModel.mapFromEntity($0) }
+    @objc func contextObjectsDidChange() {
+        getAllFavourites()
+    }
+    
+    private func getAllFavourites() {
+        let allData = storageProvider.getAllData()
+        let detailData = allData.map { PokemonDetailModel.mapFromEntity($0) }
         
-        favouriteView.detailData = mappedData
+        favouriteView.detailData = detailData
         favouriteView.tableView.reloadData()
+    }
+    
+    private func deleteFavourite() {
+        favouriteView.tapDelete = { [weak self] model in
+            guard let self = self else { return }
+            storageProvider.delete(name: model.name)
+        }
     }
 }

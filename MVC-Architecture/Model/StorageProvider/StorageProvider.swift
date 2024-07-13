@@ -56,9 +56,7 @@ extension StorageProvider {
 extension StorageProvider {
     func checkIfPokemonIsFavourite(data: PokemonDetailModel) -> Bool {
         let fetchRequest: NSFetchRequest<PokemonDetail> = PokemonDetail.fetchRequest()
-        
-        let predicate = NSPredicate(format: "name == %@", data.name)
-        fetchRequest.predicate = predicate
+        fetchRequest.predicate = NSPredicate(format: "name == %@", data.name)
         
         let pokeData = try? persistentContainer.viewContext.fetch(fetchRequest)
         guard pokeData?.count ?? 0 > 0 else { return false }
@@ -80,15 +78,18 @@ extension StorageProvider {
 }
 
 extension StorageProvider {
-    func deleteData(data: PokemonDetail) {
-        persistentContainer.viewContext.delete(data)
-        
+    func delete(name: String) {
         do {
-            try persistentContainer.viewContext.save()
-            print("delete successful")
+            let fetchRequest: NSFetchRequest<PokemonDetail> = PokemonDetail.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+            
+            let pokemonsDetails = try persistentContainer.viewContext.fetch(fetchRequest)
+            for pokemon in pokemonsDetails {
+                persistentContainer.viewContext.delete(pokemon)
+            }
+            saveContext()
         } catch {
-            persistentContainer.viewContext.rollback()
-            print("delete not successful, incomplete")
+            debugPrint("CoreData Error")
         }
     }
 }

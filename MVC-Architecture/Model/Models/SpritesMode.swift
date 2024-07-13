@@ -17,13 +17,13 @@ struct SpritesModel: Codable {
 extension SpritesModel: ModelEntityMapProtocol {
     typealias EntityType = Sprite
 
-    func mapToEntity(_ context: NSManagedObjectContext) -> Sprite {
+    func mapToEntity(_ context: NSManagedObjectContext) -> EntityType {
         let sprite: Sprite = .init(context: context)
         sprite.frontDefault = frontDefault
         return sprite
     }
     
-    static func mapFromEntity(_ entity: Sprite) -> Self {
+    static func mapFromEntity(_ entity: EntityType) -> Self {
         return .init(frontDefault: entity.frontDefault ?? "")
     }
     

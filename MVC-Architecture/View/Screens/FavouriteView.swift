@@ -19,6 +19,7 @@ class FavouriteView: UIView {
     }()
     
     var detailData = [PokemonDetailModel]()
+    var tapDelete: ((_ model: PokemonDetailModel) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,6 +73,8 @@ extension FavouriteView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("delete action clicked")
+            let data = detailData[indexPath.row]
+            tapDelete?(data)
         }
     }
 }
