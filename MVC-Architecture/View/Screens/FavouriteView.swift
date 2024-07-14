@@ -57,8 +57,11 @@ extension FavouriteView: UITableViewDataSource {
         ) as! FavouriteViewCell
         
         let data = detailData[indexPath.row]
+        print("sprite data is:\(data)")
         
-        cell.cellImageView.getImage(from: URL(string: data.sprites.frontDefault)!)
+        if let url = data.sprites.frontDefault, (url != "") {
+            cell.cellImageView.getImage(from: URL(string: url)!)
+        }
         cell.nameLabel.text = data.name
         
         return cell

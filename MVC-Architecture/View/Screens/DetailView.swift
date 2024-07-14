@@ -88,9 +88,9 @@ class DetailView: UIView {
         nameLabel.text = data.name
         heightlabel.text = "\(data.height) cm"
         weightlabel.text = "\(data.height) grm"
-        
-        let url = URL(string: data.sprites.frontDefault)!
-        imageView.getImage(from: url)
+        if let url = data.sprites.frontDefault, (url != "") {
+            imageView.getImage(from: URL(string: url)!)
+        }
         favouriteButton.isHidden = false
     }
     

@@ -55,7 +55,8 @@ class DetailViewController: UIViewController {
             if storageProvider.checkIfPokemonIsFavourite(data: data) {
                 storageProvider.delete(name: data.name)
             } else {
-                storageProvider.saveData(data: data)
+                _ = data.mapToEntity(storageProvider.persistentContainer.viewContext)
+                storageProvider.saveContext()
             }
         }
     }
