@@ -32,7 +32,7 @@ class HomeView: UIView {
         return aiView
     }()
     
-    var onTap: ((_ name:String) -> Void)?
+    var onTap: ((_ url:String) -> Void)?
     var fetchMoreData: (() -> Void)?
 
     var pokemonList: [PokemonList] = [PokemonList]()
@@ -121,7 +121,16 @@ extension HomeView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = pokemonList[indexPath.row]
+        var data: PokemonList
+        
+        if isFiltering() {
+            data = filteredData[indexPath.row]
+        } else {
+            data = pokemonList[indexPath.row]
+        }
+        print("didSelectRow name = \(data.name)")
+        print("didSelectRow url = \(data.url)")
+
         onTap?(data.url)
     }
 }

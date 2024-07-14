@@ -147,10 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				842C2F6A2C34522D009AF60D /* Models */,
-				842C2F722C345492009AF60D /* Service */,
+				842C2F722C345492009AF60D /* Services */,
 				841533412C37CA00005CB744 /* StorageProvider */,
 				842C2F712C345486009AF60D /* Helpers */,
-				842C2F772C345B3C009AF60D /* Extension */,
+				842C2F772C345B3C009AF60D /* Extensions */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,13 +176,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		842C2F722C345492009AF60D /* Service */ = {
+		842C2F722C345492009AF60D /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				842C2F7A2C345B9F009AF60D /* HomeApiService.swift */,
 				84BDFD322C356DDB003B65BC /* DetailApiService.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		842C2F732C3454B6009AF60D /* Cells */ = {
@@ -204,13 +204,13 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		842C2F772C345B3C009AF60D /* Extension */ = {
+		842C2F772C345B3C009AF60D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				8498897E2C4102C600BB4E55 /* UIViewController+Extension.swift */,
 				8444BC042C36A556007AF43D /* UIImageView+Extension.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		843A67C82C12021000B4C9E2 = {

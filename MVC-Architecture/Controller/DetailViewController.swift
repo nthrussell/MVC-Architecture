@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
         observeButtonTap()
     }
     
-    private func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel){
+    private func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel) {
         let data = storageProvider.checkIfPokemonIsFavourite(data: data)
         print("checkIfPokemonIsInFavouriteList:\(data)")
         detailView.favouriteButton.isSelected = data ? true : false
@@ -52,7 +52,11 @@ class DetailViewController: UIViewController {
         detailView.onTap = { [weak self] data in
            guard let self = self else { return }
             print("button tapped")
-            storageProvider.saveData(data: data)
+            if storageProvider.checkIfPokemonIsFavourite(data: data) {
+                storageProvider.delete(name: data.name)
+            } else {
+                storageProvider.saveData(data: data)
+            }
         }
     }
     
