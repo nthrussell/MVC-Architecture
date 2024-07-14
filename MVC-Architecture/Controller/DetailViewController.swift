@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
         
     init(url: String, 
          detailApiService: DetailApiService = DefaultDetailApiService(),
-         storageProvider: StorageProvider = StorageProvider()
+         storageProvider: StorageProvider = StorageProvider.shared
     ) {
         self.url = url
         self.detailApiService = detailApiService
@@ -54,9 +54,11 @@ class DetailViewController: UIViewController {
             print("button tapped")
             if storageProvider.checkIfPokemonIsFavourite(data: data) {
                 storageProvider.delete(name: data.name)
+                print("data deleted from favourite")
             } else {
                 _ = data.mapToEntity(storageProvider.persistentContainer.viewContext)
                 storageProvider.saveContext()
+                print("data saved to favourite")
             }
         }
     }
@@ -69,7 +71,6 @@ class DetailViewController: UIViewController {
             .sink { status in
                 print("status is:\(status)")
             } receiveValue: { [weak self] data in
-                //print("detail data is:\(data)")
                 guard let self = self else { return }
                 detailView.updateUI(data: data)
                 checkIfPokemonIsInFavouriteList(data: data)

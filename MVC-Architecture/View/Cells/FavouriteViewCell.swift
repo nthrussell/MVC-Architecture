@@ -18,8 +18,7 @@ class FavouriteViewCell: UITableViewCell {
     
     private(set) lazy var cellImageView:UIImageView = {
        let imageView = UIImageView()
-        imageView.image = UIImage(named: "pokeImage")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

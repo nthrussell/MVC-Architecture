@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
                 print("status is:\(status)")
             } receiveValue: { [weak self] payload in
                 guard let self = self else { return }
-                print("payload is:\(payload)")
+                print("payload count:\(payload.results.count)")
                 homeView.pokemonList.append(contentsOf: payload.results)
                 homeView.reloadTebleView()
                 hasDataLoaded = true

@@ -82,6 +82,6 @@ extension FavouriteView: UITableViewDelegate {
     }
 }
 
-#Preview {
-    FavouriteViewController()
-}
+//#Preview {
+//    FavouriteViewController(storageProvider: <#StorageProvider#>)
+//}

@@ -13,7 +13,7 @@ class FavouriteViewController: UIViewController {
     private var favouriteView = FavouriteView()
     private var storageProvider: StorageProvider
     
-    init(storageProvider: StorageProvider = StorageProvider()) {
+    init(storageProvider: StorageProvider = StorageProvider.shared) {
         self.storageProvider = storageProvider
         super.init(nibName: nil, bundle: nil)
     }

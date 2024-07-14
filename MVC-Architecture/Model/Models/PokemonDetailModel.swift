@@ -24,11 +24,8 @@ extension PokemonDetailModel: ModelEntityMapProtocol {
         pokemonDetail.height = Int64(height)
         pokemonDetail.weight = Int64(weight)
         
-        let sprites:Sprite = .init(context: context)
-        sprites.frontDefault = sprites.frontDefault
-        sprites.pokeDetail = pokemonDetail
-        
-        pokemonDetail.addToSprites(sprites)
+        sprites.mapToEntity(context).pokeDetail = pokemonDetail
+        sprites.mapToEntity(context).frontDefault = sprites.frontDefault
         
         return pokemonDetail
     }
