@@ -67,6 +67,7 @@ extension StorageProvider {
 extension StorageProvider {
     func getAllData() -> [PokemonDetail] {
         let fetchRequest: NSFetchRequest<PokemonDetail> = PokemonDetail.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         do {
             return try persistentContainer.viewContext.fetch(fetchRequest)
