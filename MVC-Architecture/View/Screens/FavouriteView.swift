@@ -58,8 +58,8 @@ extension FavouriteView: UITableViewDataSource {
         
         let data = detailData[indexPath.row]
         
-        cell.imageView?.getImage(from: URL(string: data.sprites.frontDefault)!)
-        cell.textLabel?.text = data.name
+        cell.cellImageView.getImage(from: URL(string: data.sprites.frontDefault)!)
+        cell.nameLabel.text = data.name
         
         return cell
     }
