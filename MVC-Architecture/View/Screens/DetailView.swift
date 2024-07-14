@@ -43,16 +43,14 @@ class DetailView: UIView {
     
     private(set) lazy var weightlabel:UILabel = {
        let label = UILabel()
-        //label.text = "Pokemon weight"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private(set) lazy var heightlabel:UILabel = {
        let label = UILabel()
-        //label.text = "Pokemon height"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -86,8 +84,8 @@ class DetailView: UIView {
         self.data = data
         
         nameLabel.text = data.name
-        heightlabel.text = "\(data.height) cm"
-        weightlabel.text = "\(data.height) grm"
+        heightlabel.text = "height: \(data.height) cm"
+        weightlabel.text = "weight: \(data.weight) gm"
         if let url = data.sprites.frontDefault, (url != "") {
             imageView.getImage(from: URL(string: url)!)
         }

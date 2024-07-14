@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
 
-        let tabBar = UITabBarController()
+        let tabBarController = UITabBarController()
+        tabBarController.tabBar.tintColor = .purple
         
         let firstVC = BaseNavigationController(rootViewController: HomeViewController())
         let secondVC = BaseNavigationController(rootViewController: FavouriteViewController())
@@ -30,9 +31,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         firstVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
         secondVC.tabBarItem = UITabBarItem(title: "Favourite", image: UIImage(systemName: "star"), tag: 1)
         
-        tabBar.viewControllers = [firstVC, secondVC]
+        tabBarController.viewControllers = [firstVC, secondVC]
         
-        window.rootViewController = tabBar
+        window.rootViewController = tabBarController
         
         self.window = window
     }

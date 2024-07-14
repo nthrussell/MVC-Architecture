@@ -14,9 +14,13 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
         
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .orange
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .purple
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.navigationBar.scrollEdgeAppearance = appearance
-        self.navigationBar.isTranslucent = false
+        navigationBar.standardAppearance = appearance
+        navigationBar.compactAppearance = appearance
+        navigationBar.scrollEdgeAppearance = appearance
+        
+        navigationBar.tintColor = .white
     }
 }

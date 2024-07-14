@@ -42,6 +42,11 @@ class DetailViewController: UIViewController {
         observeButtonTap()
     }
     
+    override var hidesBottomBarWhenPushed: Bool {
+        get { navigationController?.visibleViewController == self }
+        set { super.hidesBottomBarWhenPushed = newValue }
+    }
+    
     private func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel) {
         let data = storageProvider.checkIfPokemonIsFavourite(data: data)
         print("checkIfPokemonIsInFavouriteList:\(data)")
