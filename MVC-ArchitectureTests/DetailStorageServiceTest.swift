@@ -12,7 +12,7 @@ import CoreData
 
 class DetailStorageServiceTest: XCTestCase {
     var storageProvider: InMemoryStorageProvider!
-    var sut: DefaultDetailStorageService!
+    var sut: DetailStorageService!
     
     var firstData: PokemonDetailModel!
     var secondData: PokemonDetailModel!
@@ -49,39 +49,57 @@ class DetailStorageServiceTest: XCTestCase {
         super .tearDown()
     }
     
-    func test_SaveData() {
-        sut.saveData(data: firstData)
-        sut.saveData(data: secondData)
+    func test_SaveTwoDataOnDB_ShouldReturnTwoData() {
+        saveData(data: firstData)
+        saveData(data: secondData)
 
         let value: [PokemonDetail] = storageProvider.getAllData()
         XCTAssertEqual(value.count, 2)
     }
     
-    func test_DeleteData() {
-        sut.saveData(data: firstData)
-        sut.saveData(data: secondData)
-        sut.saveData(data: thirdData)
+    func test_SaveThreeDataOnDB_DeleteOneFromDB_ShouldReturnTwoData() {
+        saveData(data: firstData)
+        saveData(data: secondData)
+        saveData(data: thirdData)
         
         let firstValue = storageProvider.getAllData()
         XCTAssertEqual(firstValue.count, 3)
         
-        sut.deleteData(data: secondData)
+        deleteData(data: secondData)
         let secondValue = storageProvider.getAllData()
         XCTAssertEqual(secondValue.count, 2)
     }
     
-    func test_CheckIfFavourite() {
-        sut.saveData(data: secondData)
+    func test_SaveOneDataOnDB_CheckIfThatNameExists() {
+        saveData(data: secondData)
         
         let value = storageProvider.getAllData()
         XCTAssertEqual(value.first?.name, "ivysaur")
     }
     
     func test_SaveOrDelete() {
-        sut.saveData(data: firstData)
-        sut.saveData(data: secondData)
+        saveData(data: firstData)
+        saveData(data: secondData)
         
-        sut.checkIfFavourite(data: thirdData) ? sut.deleteData(data: thirdData) : sut.saveData(data: thirdData)
+        sut.checkIfFavourite(data: thirdData) ? deleteData(data: thirdData) : saveData(data: thirdData)
         XCTAssertEqual(sut.checkIfFavourite(data: thirdData), true)
+        
+        let firstValue = storageProvider.getAllData()
+        XCTAssertEqual(firstValue.count, 3)
+        
+        sut.checkIfFavourite(data: firstData) ? deleteData(data: firstData) : saveData(data: firstData)
+        XCTAssertEqual(sut.checkIfFavourite(data: firstData), false)
+        
+        let secondValue = storageProvider.getAllData()
+        XCTAssertEqual(secondValue.count, 2)
+    }
+    
+    private func saveData(data: PokemonDetailModel) {
+        _ = data.mapToEntity(storageProvider.persistentContainer.viewContext)
+        storageProvider.saveContext()
+    }
+    
+    private func deleteData(data: PokemonDetailModel) {
+        storageProvider.delete(name: data.name)
     }
 }

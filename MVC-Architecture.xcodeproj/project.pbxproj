@@ -14,7 +14,8 @@
 		8428F7822C468AF000E7CAE8 /* MockDetailStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7812C468ADE00E7CAE8 /* MockDetailStorageService.swift */; };
 		8428F7842C468AFC00E7CAE8 /* MockFavouriteStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7832C468AF900E7CAE8 /* MockFavouriteStorageService.swift */; };
 		8428F7862C468D1100E7CAE8 /* InMemoryStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */; };
-		8428F7882C46A30800E7CAE8 /* DetailStorageServiceTEst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7872C46A30400E7CAE8 /* DetailStorageServiceTEst.swift */; };
+		8428F7882C46A30800E7CAE8 /* DetailStorageServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7872C46A30400E7CAE8 /* DetailStorageServiceTest.swift */; };
+		8428F78A2C46C91C00E7CAE8 /* FavouriteStorageServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7892C46C91A00E7CAE8 /* FavouriteStorageServiceTest.swift */; };
 		842C2F652C3451C9009AF60D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F642C3451C3009AF60D /* HomeViewController.swift */; };
 		842C2F672C3451F9009AF60D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F662C3451F7009AF60D /* DetailViewController.swift */; };
 		842C2F692C345217009AF60D /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F682C345216009AF60D /* HomeViewCell.swift */; };
@@ -71,7 +72,8 @@
 		8428F7812C468ADE00E7CAE8 /* MockDetailStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailStorageService.swift; sourceTree = "<group>"; };
 		8428F7832C468AF900E7CAE8 /* MockFavouriteStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavouriteStorageService.swift; sourceTree = "<group>"; };
 		8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorageProvider.swift; sourceTree = "<group>"; };
-		8428F7872C46A30400E7CAE8 /* DetailStorageServiceTEst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStorageServiceTEst.swift; sourceTree = "<group>"; };
+		8428F7872C46A30400E7CAE8 /* DetailStorageServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStorageServiceTest.swift; sourceTree = "<group>"; };
+		8428F7892C46C91A00E7CAE8 /* FavouriteStorageServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteStorageServiceTest.swift; sourceTree = "<group>"; };
 		842C2F642C3451C3009AF60D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		842C2F662C3451F7009AF60D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		842C2F682C345216009AF60D /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
@@ -282,7 +284,8 @@
 				8428F77C2C468AAA00E7CAE8 /* Mocks */,
 				8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */,
 				843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */,
-				8428F7872C46A30400E7CAE8 /* DetailStorageServiceTEst.swift */,
+				8428F7872C46A30400E7CAE8 /* DetailStorageServiceTest.swift */,
+				8428F7892C46C91A00E7CAE8 /* FavouriteStorageServiceTest.swift */,
 			);
 			path = "MVC-ArchitectureTests";
 			sourceTree = "<group>";
@@ -475,8 +478,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8428F7842C468AFC00E7CAE8 /* MockFavouriteStorageService.swift in Sources */,
-				8428F7882C46A30800E7CAE8 /* DetailStorageServiceTEst.swift in Sources */,
+				8428F7882C46A30800E7CAE8 /* DetailStorageServiceTest.swift in Sources */,
 				8428F7822C468AF000E7CAE8 /* MockDetailStorageService.swift in Sources */,
+				8428F78A2C46C91C00E7CAE8 /* FavouriteStorageServiceTest.swift in Sources */,
 				8428F7862C468D1100E7CAE8 /* InMemoryStorageProvider.swift in Sources */,
 				843A67EC2C12021200B4C9E2 /* MVC_ArchitectureTests.swift in Sources */,
 				8428F77E2C468AC300E7CAE8 /* MockHomeApiService.swift in Sources */,
