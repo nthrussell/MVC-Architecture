@@ -140,8 +140,8 @@ class DetailView: UIView {
     }
 }
 
-#Preview {
-    let vc = DetailViewController(url: "")
-   return vc
-}
+//#Preview {
+//    let vc = DetailViewController(url: "")
+//   return vc
+//}
 

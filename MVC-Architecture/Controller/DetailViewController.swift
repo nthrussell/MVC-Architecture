@@ -13,16 +13,16 @@ class DetailViewController: UIViewController {
     var url: String
     private var detailView = DetailView()
     private var detailApiService: DetailApiService
-    private var storageProvider: StorageProvider
+    private var detailStorageService: DetailStorageService
     var cancellable = Set<AnyCancellable>()
         
     init(url: String, 
          detailApiService: DetailApiService = DefaultDetailApiService(),
-         storageProvider: StorageProvider = StorageProvider.shared
+         detailStorageService: DetailStorageService = DefaultDetailStorageService(storageProvider: StorageProvider.shared)
     ) {
         self.url = url
         self.detailApiService = detailApiService
-        self.storageProvider = storageProvider
+        self.detailStorageService = detailStorageService
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -48,23 +48,14 @@ class DetailViewController: UIViewController {
     }
     
     private func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel) {
-        let data = storageProvider.checkIfPokemonIsFavourite(data: data)
-        print("checkIfPokemonIsInFavouriteList:\(data)")
+        let data = detailStorageService.checkIfFavourite(data: data)
         detailView.favouriteButton.isSelected = data ? true : false
     }
     
     func observeButtonTap() {
         detailView.onTap = { [weak self] data in
            guard let self = self else { return }
-            print("button tapped")
-            if storageProvider.checkIfPokemonIsFavourite(data: data) {
-                storageProvider.delete(name: data.name)
-                print("data deleted from favourite")
-            } else {
-                _ = data.mapToEntity(storageProvider.persistentContainer.viewContext)
-                storageProvider.saveContext()
-                print("data saved to favourite")
-            }
+            detailStorageService.saveOrDelete(with: data)
         }
     }
     
