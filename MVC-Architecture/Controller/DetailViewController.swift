@@ -52,7 +52,7 @@ class DetailViewController: UIViewController {
         detailView.favouriteButton.isSelected = data ? true : false
     }
     
-    func observeButtonTap() {
+    private func observeButtonTap() {
         detailView.onTap = { [weak self] data in
            guard let self = self else { return }
             detailStorageService.saveOrDelete(with: data)

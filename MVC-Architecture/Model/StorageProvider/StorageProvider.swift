@@ -25,22 +25,9 @@ extension StorageProvider {
     func saveContext() {
         do {
             try persistentContainer.viewContext.save()
-            print("pokemonDetail saved successfully")
         } catch {
             persistentContainer.viewContext.rollback()
-            print("failed to save pokemonDetail:\(error)")
         }
-    }
-}
-
-extension StorageProvider {
-    func checkIfPokemonIsFavourite(data: PokemonDetailModel) -> Bool {
-        let fetchRequest: NSFetchRequest<PokemonDetail> = PokemonDetail.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "name == %@", data.name)
-        
-        let pokeData = try? persistentContainer.viewContext.fetch(fetchRequest)
-        guard pokeData?.count ?? 0 > 0 else { return false }
-        return pokeData?[0].name == data.name
     }
 }
 
