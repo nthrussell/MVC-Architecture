@@ -9,7 +9,7 @@ import CoreData
 class StorageProvider {
     static let shared = StorageProvider()
 
-    let persistentContainer: NSPersistentContainer
+    var persistentContainer: NSPersistentContainer
     
     init() {
         persistentContainer = NSPersistentContainer(name: "PokemonDataModel")

@@ -21,16 +21,22 @@ class DefaultDetailStorageService: DetailStorageService {
         self.storageProvider = storageProvider
     }
     
+    func saveData(data: PokemonDetailModel) {
+        _ = data.mapToEntity(storageProvider.persistentContainer.viewContext)
+        storageProvider.saveContext()
+    }
+    
+    func deleteData(data: PokemonDetailModel) {
+        storageProvider.delete(name: data.name)
+    }
+    
     func checkIfFavourite(data: PokemonDetailModel) -> Bool {
         storageProvider.checkIfFavourite(name: data.name)
     }
     
     func saveOrDelete(with data: PokemonDetailModel) {
-        if checkIfFavourite(data: data) {
-            storageProvider.delete(name: data.name)
-        } else {
-            _ = data.mapToEntity(storageProvider.persistentContainer.viewContext)
-            storageProvider.saveContext()
-        }
+        checkIfFavourite(data: data) ? deleteData(data: data) : saveData(data: data)
     }
+    
+   
 }
