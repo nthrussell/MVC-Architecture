@@ -11,10 +11,10 @@ import CoreData
 class FavouriteViewController: UIViewController {
 
     private var favouriteView = FavouriteView()
-    private var storageProvider: StorageProvider
+    private var favouriteStorageService: FavouriteStorageService
     
-    init(storageProvider: StorageProvider = StorageProvider.shared) {
-        self.storageProvider = storageProvider
+    init(favouriteStorageService: FavouriteStorageService = DefaultFavouriteStorageService(storageProvider: StorageProvider.shared)) {
+        self.favouriteStorageService = favouriteStorageService
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,7 +32,7 @@ class FavouriteViewController: UIViewController {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(contextObjectsDidChange),
                                                name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
-                                               object: storageProvider.persistentContainer.viewContext)
+                                               object: StorageProvider.shared.persistentContainer.viewContext)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,17 +45,15 @@ class FavouriteViewController: UIViewController {
     }
     
     private func getAllFavourites() {
-        let allData = storageProvider.getAllData()
-        let detailData = allData.map { PokemonDetailModel.mapFromEntity($0) }
-        
-        favouriteView.detailData = detailData
+        let allData = favouriteStorageService.getAllFavourites()
+        favouriteView.detailData = allData
         favouriteView.tableView.reloadData()
     }
     
     private func deleteFavourite() {
-        favouriteView.tapDelete = { [weak self] model in
+        favouriteView.tapDelete = { [weak self] data in
             guard let self = self else { return }
-            storageProvider.delete(name: model.name)
+            favouriteStorageService.delete(data: data)
         }
     }
 }
