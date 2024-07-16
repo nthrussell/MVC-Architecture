@@ -21,30 +21,11 @@ class DefaultFavouriteStorageService: FavouriteStorageService {
     }
     
     func getAllFavourites() -> [PokemonDetailModel] {
-        let fetchRequest: NSFetchRequest<PokemonDetail> = PokemonDetail.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        
-        do {
-            let value = try storageProvider.persistentContainer.viewContext.fetch(fetchRequest)
-            return value.map { PokemonDetailModel.mapFromEntity($0) }
-        } catch {
-            debugPrint("CoreData Get All Favourites Error")
-            return []
-        }
+        let value: [PokemonDetail] = storageProvider.getAllData()
+        return value.map { PokemonDetailModel.mapFromEntity($0) }
     }
     
     func delete(data: PokemonDetailModel) {
-        do {
-            let fetchRequest: NSFetchRequest<PokemonDetail> = PokemonDetail.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "name == %@", data.name)
-            
-            let pokemonsDetails = try storageProvider.persistentContainer.viewContext.fetch(fetchRequest)
-            for pokemon in pokemonsDetails {
-                storageProvider.persistentContainer.viewContext.delete(pokemon)
-            }
-            storageProvider.saveContext()
-        } catch {
-            debugPrint("CoreData Delete Error")
-        }
+        storageProvider.delete(name: data.name)
     }
 }

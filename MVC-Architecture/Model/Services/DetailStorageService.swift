@@ -22,12 +22,7 @@ class DefaultDetailStorageService: DetailStorageService {
     }
     
     func checkIfFavourite(data: PokemonDetailModel) -> Bool {
-        let fetchRequest: NSFetchRequest<PokemonDetail> = PokemonDetail.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "name == %@", data.name)
-        
-        let pokeData = try? storageProvider.persistentContainer.viewContext.fetch(fetchRequest)
-        guard let pokeData = pokeData, pokeData.count > 0 else { return false }
-        return pokeData.first?.name == data.name
+        storageProvider.checkIfFavourite(name: data.name)
     }
     
     func saveOrDelete(with data: PokemonDetailModel) {

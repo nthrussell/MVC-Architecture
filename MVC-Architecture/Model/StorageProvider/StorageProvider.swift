@@ -39,9 +39,20 @@ extension StorageProvider {
         do {
             return try persistentContainer.viewContext.fetch(fetchRequest)
         } catch {
-            print("failed to fetch PokemonDetail with error:\(error)")
+            debugPrint("CoreData Delete Error:\(error)")
             return []
         }
+    }
+}
+
+extension StorageProvider {
+    func checkIfFavourite(name: String) -> Bool {
+        let fetchRequest: NSFetchRequest<PokemonDetail> = PokemonDetail.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        
+        let pokeData = try? persistentContainer.viewContext.fetch(fetchRequest)
+        guard let pokeData = pokeData, pokeData.count > 0 else { return false }
+        return pokeData.first?.name == name
     }
 }
 
@@ -57,7 +68,7 @@ extension StorageProvider {
             }
             saveContext()
         } catch {
-            debugPrint("CoreData Error")
+            debugPrint("CoreData Delete Error:\(error)")
         }
     }
 }
