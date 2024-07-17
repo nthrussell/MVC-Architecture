@@ -48,4 +48,10 @@ class FavouriteStorageServiceTest: XCTestCase {
         thirdData = nil
         super .tearDown()
     }
+    
+    func test_saveThreeData_getThreeBackFromDB() {
+        
+    }
+    
+    
 }

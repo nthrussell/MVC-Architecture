@@ -28,3 +28,16 @@ class InMemoryStorageProvider: StorageProvider {
         persistentContainer = container
     }
 }
+
+extension InMemoryStorageProvider {
+    func saveData(data: PokemonDetailModel) {
+        _ = data.mapToEntity(persistentContainer.viewContext)
+        saveContext()
+    }
+}
+
+extension InMemoryStorageProvider {
+    func deleteData(data: PokemonDetailModel) {
+        delete(name: data.name)
+    }
+}

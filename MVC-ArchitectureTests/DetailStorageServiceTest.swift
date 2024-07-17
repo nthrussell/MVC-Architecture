@@ -50,28 +50,28 @@ class DetailStorageServiceTest: XCTestCase {
     }
     
     func test_SaveTwoDataOnDB_ShouldReturnTwoData() {
-        saveData(data: firstData)
-        saveData(data: secondData)
+        storageProvider.saveData(data:firstData)
+        storageProvider.saveData(data:secondData)
 
         let value: [PokemonDetail] = storageProvider.getAllData()
         XCTAssertEqual(value.count, 2)
     }
     
     func test_SaveThreeDataOnDB_DeleteOneFromDB_ShouldReturnTwoData() {
-        saveData(data: firstData)
-        saveData(data: secondData)
-        saveData(data: thirdData)
+        storageProvider.saveData(data:firstData)
+        storageProvider.saveData(data:secondData)
+        storageProvider.saveData(data:thirdData)
         
         let firstValue = storageProvider.getAllData()
         XCTAssertEqual(firstValue.count, 3)
         
-        deleteData(data: secondData)
+        storageProvider.deleteData(data: secondData)
         let secondValue = storageProvider.getAllData()
         XCTAssertEqual(secondValue.count, 2)
     }
     
     func test_SaveOneDataOnDB_CheckIfThatNameExists() {
-        saveData(data: secondData)
+        storageProvider.saveData(data: secondData)
         
         let value = storageProvider.getAllData()
         XCTAssertEqual(value.first?.name, "ivysaur")
@@ -82,8 +82,8 @@ class DetailStorageServiceTest: XCTestCase {
     }
     
     func test_SaveOrDelete() {
-        saveData(data: firstData)
-        saveData(data: secondData)
+        storageProvider.saveData(data: firstData)
+        storageProvider.saveData(data: secondData)
         
         //Check if data is not there then save
         sut.saveOrDelete(with: thirdData)
@@ -98,14 +98,5 @@ class DetailStorageServiceTest: XCTestCase {
         
         let secondValue = storageProvider.getAllData()
         XCTAssertEqual(secondValue.count, 2)
-    }
-    
-    private func saveData(data: PokemonDetailModel) {
-        _ = data.mapToEntity(storageProvider.persistentContainer.viewContext)
-        storageProvider.saveContext()
-    }
-    
-    private func deleteData(data: PokemonDetailModel) {
-        storageProvider.delete(name: data.name)
     }
 }
