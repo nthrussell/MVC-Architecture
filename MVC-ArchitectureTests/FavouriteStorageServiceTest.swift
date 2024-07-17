@@ -18,5 +18,34 @@ class FavouriteStorageServiceTest: XCTestCase {
     var secondData: PokemonDetailModel!
     var thirdData: PokemonDetailModel!
     
+    override func setUpWithError() throws {
+        super.setUp()
+        storageProvider = InMemoryStorageProvider()
+        sut = DefaultFavouriteStorageService(storageProvider: storageProvider)
+        firstData = PokemonDetailModel(
+            height: 6,
+            name: "bulbasaur",
+            sprites: SpritesModel(frontDefault: "https://pokeapi.co/api/v2/pokemon/1/"),
+            weight: 8)
+        
+        secondData = PokemonDetailModel(
+            height: 4,
+            name: "ivysaur",
+            sprites: SpritesModel(frontDefault: "https://pokeapi.co/api/v2/pokemon/2/"),
+            weight: 5)
+        
+        thirdData = PokemonDetailModel(
+            height: 4,
+            name: "venusaur",
+            sprites: SpritesModel(frontDefault: "https://pokeapi.co/api/v2/pokemon/3/"),
+            weight: 5)
+    }
     
+    override func tearDownWithError() throws {
+        sut = nil
+        firstData = nil
+        secondData = nil
+        thirdData = nil
+        super .tearDown()
+    }
 }

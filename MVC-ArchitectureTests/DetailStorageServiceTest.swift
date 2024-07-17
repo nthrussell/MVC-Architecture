@@ -75,6 +75,10 @@ class DetailStorageServiceTest: XCTestCase {
         
         let value = storageProvider.getAllData()
         XCTAssertEqual(value.first?.name, "ivysaur")
+        
+        XCTAssertFalse(sut.checkIfFavourite(data: firstData))
+        XCTAssertTrue(sut.checkIfFavourite(data: secondData))
+        XCTAssertFalse(sut.checkIfFavourite(data: thirdData))
     }
     
     func test_SaveOrDelete() {
@@ -82,14 +86,14 @@ class DetailStorageServiceTest: XCTestCase {
         saveData(data: secondData)
         
         //Check if data is not there then save
-        sut.checkIfFavourite(data: thirdData) ? deleteData(data: thirdData) : saveData(data: thirdData)
+        sut.saveOrDelete(with: thirdData)
         XCTAssertTrue(sut.checkIfFavourite(data: thirdData))
         
         let firstValue = storageProvider.getAllData()
         XCTAssertEqual(firstValue.count, 3)
         
         //Check if data is there then delete
-        sut.checkIfFavourite(data: firstData) ? deleteData(data: firstData) : saveData(data: firstData)
+        sut.saveOrDelete(with: firstData)
         XCTAssertFalse(sut.checkIfFavourite(data: firstData))
         
         let secondValue = storageProvider.getAllData()
