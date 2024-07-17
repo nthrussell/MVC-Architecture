@@ -49,9 +49,35 @@ class FavouriteStorageServiceTest: XCTestCase {
         super .tearDown()
     }
     
-    func test_saveThreeData_getThreeBackFromDB() {
+    func test_saveTwoData_getTwoBackFromDB() {
+        storageProvider.saveData(data:firstData)
+        storageProvider.saveData(data:secondData)
         
+        let value = sut.getAllFavourites()
+        XCTAssertNotEqual(value.count, 1)
+        XCTAssertEqual(value.count, 2)
     }
     
+    func test_saveThirdDataOnDB_retrieveTheName_itShouldBe_venusaur() {
+        storageProvider.saveData(data:thirdData)
+        
+        let value = sut.getAllFavourites()
+        XCTAssertEqual(value.first?.name, "venusaur")
+    }
+    
+    func test_SaveThreeDataOnDB_DeleteOneFromDB_ShouldReturnTwoData() {
+        storageProvider.saveData(data:firstData)
+        storageProvider.saveData(data:secondData)
+        storageProvider.saveData(data:thirdData)
+        
+        let firstValue = sut.getAllFavourites()
+        XCTAssertEqual(firstValue.count, 3)
+        
+        sut.delete(data: firstData)
+        sut.delete(data: secondData)
+
+        let secondValue = sut.getAllFavourites()
+        XCTAssertEqual(secondValue.count, 1)
+    }
     
 }
