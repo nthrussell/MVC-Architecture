@@ -10,13 +10,14 @@ import Combine
 
 
 protocol HomeApiService {
+    init(networkService: NetworkService)
     func fetchPokemonList(offset: Int) -> AnyPublisher<PokemonListModel, Error>
 }
 
 class DefaultHomeApiService: HomeApiService {
     let networkService: NetworkService
 
-    init(networkService: NetworkService = URLSession.shared) {
+    required init(networkService: NetworkService = URLSession.shared) {
         self.networkService = networkService
     }
     
