@@ -11,7 +11,6 @@ import Combine
 protocol DetailApiService {
     init(networkService: NetworkService)
     func fetchDetail(with url:String) -> AnyPublisher<PokemonDetailModel, Error>
-    func downloadImage(with url:String) -> AnyPublisher<Data, Never>
 }
 
 class DefaultDetailApiService: DetailApiService {
@@ -27,14 +26,6 @@ class DefaultDetailApiService: DetailApiService {
         
         return networkService.load(URLRequest(url: url))
             .decode(type: PokemonDetailModel.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
-    }
-    
-    func downloadImage(with url:String) -> AnyPublisher<Data, Never> {
-        let imageUrl = URL(string: url)!
-
-        return networkService.load(URLRequest(url: imageUrl))
-            .replaceError(with: Data())
             .eraseToAnyPublisher()
     }
 }

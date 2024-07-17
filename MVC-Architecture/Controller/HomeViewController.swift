@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
     
     func navigate() {
         homeView.onTap = { url in
-            print("navigate url is:\(url)")
+            debugPrint("navigate url is:\(url)")
             let vc = DetailViewController(url: url)
             self.show(vc, sender: self)
         }
@@ -57,10 +57,10 @@ class HomeViewController: UIViewController {
         if hasDataLoaded { return }
         homeApiService.fetchPokemonList(offset: homeView.pokemonList.count)
             .sink { status in
-                print("status is:\(status)")
+                debugPrint("status is:\(status)")
             } receiveValue: { [weak self] payload in
                 guard let self = self else { return }
-                print("payload is:\(payload)")
+                debugPrint("payload is:\(payload)")
                 homeView.pokemonList.append(contentsOf: payload.results)
                 homeView.reloadTebleView()
                 hasDataLoaded = true

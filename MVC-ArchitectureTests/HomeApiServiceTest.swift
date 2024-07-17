@@ -13,7 +13,7 @@ import Combine
 class HomeApiServiceTest: XCTestCase {
     var cancellables = Set<AnyCancellable>()
     
-    func test_whenLoadDataFromApi_then_decodeToPokemonListModel_successful() throws {
+    func test_whenLoadDataFromHomeApi_then_decodeToPokemonListModel_successful() throws {
         let json = """
                    { 
                      "count":1302,
@@ -43,7 +43,7 @@ class HomeApiServiceTest: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
     
-    func test_whenRequest_returnsAnError() {
+    func test_whenHomeApiRequest_returnsAnError() {
         let expectedError = URLError(.badServerResponse)
         let apiService = DefaultHomeApiService(networkService: NetworkServiceStub(returning: .failure(expectedError)))
         

@@ -65,7 +65,7 @@ class DetailViewController: UIViewController {
             .fetchDetail(with: url)
             .receive(on: DispatchQueue.main)
             .sink { status in
-                print("status is:\(status)")
+                debugPrint("status is:\(status)")
             } receiveValue: { [weak self] data in
                 guard let self = self else { return }
                 detailView.updateUI(data: data)

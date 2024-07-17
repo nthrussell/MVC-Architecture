@@ -128,8 +128,8 @@ extension HomeView: UITableViewDelegate {
         } else {
             data = pokemonList[indexPath.row]
         }
-        print("didSelectRow name = \(data.name)")
-        print("didSelectRow url = \(data.url)")
+        debugPrint("didSelectRow name = \(data.name)")
+        debugPrint("didSelectRow url = \(data.url)")
 
         onTap?(data.url)
     }
