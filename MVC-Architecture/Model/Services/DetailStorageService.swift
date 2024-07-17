@@ -21,12 +21,12 @@ class DefaultDetailStorageService: DetailStorageService {
         self.storageProvider = storageProvider
     }
     
-    func saveData(data: PokemonDetailModel) {
+    private func saveData(data: PokemonDetailModel) {
         _ = data.mapToEntity(storageProvider.persistentContainer.viewContext)
         storageProvider.saveContext()
     }
     
-    func deleteData(data: PokemonDetailModel) {
+    private func deleteData(data: PokemonDetailModel) {
         storageProvider.delete(name: data.name)
     }
     
