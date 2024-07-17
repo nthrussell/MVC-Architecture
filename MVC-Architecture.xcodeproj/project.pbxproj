@@ -20,7 +20,6 @@
 		842C2F672C3451F9009AF60D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F662C3451F7009AF60D /* DetailViewController.swift */; };
 		842C2F692C345217009AF60D /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F682C345216009AF60D /* HomeViewCell.swift */; };
 		842C2F6C2C345235009AF60D /* PokemonListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6B2C345234009AF60D /* PokemonListModel.swift */; };
-		842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6D2C345257009AF60D /* NetworkError.swift */; };
 		842C2F702C34526E009AF60D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F6F2C34526D009AF60D /* Constant.swift */; };
 		842C2F762C3454D7009AF60D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F752C3454D4009AF60D /* HomeView.swift */; };
 		842C2F7B2C345BB2009AF60D /* HomeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F7A2C345B9F009AF60D /* HomeApiService.swift */; };
@@ -43,6 +42,11 @@
 		849889872C411B9800BB4E55 /* SpritesMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849889862C411B8F00BB4E55 /* SpritesMode.swift */; };
 		84BDFD332C356DE0003B65BC /* DetailApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFD322C356DDB003B65BC /* DetailApiService.swift */; };
 		84BDFD352C356E81003B65BC /* PokemonDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */; };
+		84C1082C2C47A99000AE231A /* HomeApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1082B2C47A98B00AE231A /* HomeApiServiceTest.swift */; };
+		84C1084B2C47DEFE00AE231A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1084A2C47DEF800AE231A /* NetworkService.swift */; };
+		84C1084D2C47DFDF00AE231A /* URLSession+NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1084C2C47DFD500AE231A /* URLSession+NetworkService.swift */; };
+		84C1084F2C47E39900AE231A /* NetworkServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1084E2C47E39600AE231A /* NetworkServiceStub.swift */; };
+		84C108512C481AD400AE231A /* DetailApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C108502C481ACD00AE231A /* DetailApiServiceTest.swift */; };
 		84E859E72C465D71003737CC /* DetailStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E859E62C465D6B003737CC /* DetailStorageService.swift */; };
 		84E859E92C467E69003737CC /* FavouriteStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E859E82C467E62003737CC /* FavouriteStorageService.swift */; };
 /* End PBXBuildFile section */
@@ -78,7 +82,6 @@
 		842C2F662C3451F7009AF60D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		842C2F682C345216009AF60D /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		842C2F6B2C345234009AF60D /* PokemonListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListModel.swift; sourceTree = "<group>"; };
-		842C2F6D2C345257009AF60D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		842C2F6F2C34526D009AF60D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		842C2F752C3454D4009AF60D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		842C2F7A2C345B9F009AF60D /* HomeApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiService.swift; sourceTree = "<group>"; };
@@ -103,6 +106,11 @@
 		849889862C411B8F00BB4E55 /* SpritesMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpritesMode.swift; sourceTree = "<group>"; };
 		84BDFD322C356DDB003B65BC /* DetailApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApiService.swift; sourceTree = "<group>"; };
 		84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailModel.swift; sourceTree = "<group>"; };
+		84C1082B2C47A98B00AE231A /* HomeApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiServiceTest.swift; sourceTree = "<group>"; };
+		84C1084A2C47DEF800AE231A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		84C1084C2C47DFD500AE231A /* URLSession+NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+NetworkService.swift"; sourceTree = "<group>"; };
+		84C1084E2C47E39600AE231A /* NetworkServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceStub.swift; sourceTree = "<group>"; };
+		84C108502C481ACD00AE231A /* DetailApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApiServiceTest.swift; sourceTree = "<group>"; };
 		84E859E62C465D6B003737CC /* DetailStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStorageService.swift; sourceTree = "<group>"; };
 		84E859E82C467E62003737CC /* FavouriteStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteStorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,7 +208,6 @@
 			children = (
 				84636E022C40392900C93AE7 /* BaseNavigationController.swift */,
 				842C2F6F2C34526D009AF60D /* Constant.swift */,
-				842C2F6D2C345257009AF60D /* NetworkError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 		842C2F722C345492009AF60D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				84C1084A2C47DEF800AE231A /* NetworkService.swift */,
 				842C2F7A2C345B9F009AF60D /* HomeApiService.swift */,
 				84BDFD322C356DDB003B65BC /* DetailApiService.swift */,
 				84E859E62C465D6B003737CC /* DetailStorageService.swift */,
@@ -238,6 +246,7 @@
 		842C2F772C345B3C009AF60D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				84C1084C2C47DFD500AE231A /* URLSession+NetworkService.swift */,
 				8498897E2C4102C600BB4E55 /* UIViewController+Extension.swift */,
 				8444BC042C36A556007AF43D /* UIImageView+Extension.swift */,
 			);
@@ -281,9 +290,12 @@
 		843A67EA2C12021200B4C9E2 /* MVC-ArchitectureTests */ = {
 			isa = PBXGroup;
 			children = (
+				84C1084E2C47E39600AE231A /* NetworkServiceStub.swift */,
 				8428F77C2C468AAA00E7CAE8 /* Mocks */,
 				8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */,
 				843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */,
+				84C1082B2C47A98B00AE231A /* HomeApiServiceTest.swift */,
+				84C108502C481ACD00AE231A /* DetailApiServiceTest.swift */,
 				8428F7872C46A30400E7CAE8 /* DetailStorageServiceTest.swift */,
 				8428F7892C46C91A00E7CAE8 /* FavouriteStorageServiceTest.swift */,
 			);
@@ -447,6 +459,7 @@
 			files = (
 				8444BC052C36A55F007AF43D /* UIImageView+Extension.swift in Sources */,
 				842C2F762C3454D7009AF60D /* HomeView.swift in Sources */,
+				84C1084D2C47DFDF00AE231A /* URLSession+NetworkService.swift in Sources */,
 				849889812C41035B00BB4E55 /* FavouriteView.swift in Sources */,
 				841533432C37CA1E005CB744 /* StorageProvider.swift in Sources */,
 				842C2F7D2C345D00009AF60D /* DetailView.swift in Sources */,
@@ -454,7 +467,6 @@
 				84636E012C40263300C93AE7 /* FavouriteViewController.swift in Sources */,
 				84636E032C40392F00C93AE7 /* BaseNavigationController.swift in Sources */,
 				84BDFD352C356E81003B65BC /* PokemonDetailModel.swift in Sources */,
-				842C2F6E2C345259009AF60D /* NetworkError.swift in Sources */,
 				8498897F2C4102CF00BB4E55 /* UIViewController+Extension.swift in Sources */,
 				842C2F702C34526E009AF60D /* Constant.swift in Sources */,
 				849889872C411B9800BB4E55 /* SpritesMode.swift in Sources */,
@@ -469,6 +481,7 @@
 				842C2F6C2C345235009AF60D /* PokemonListModel.swift in Sources */,
 				842C2F652C3451C9009AF60D /* HomeViewController.swift in Sources */,
 				842C2F692C345217009AF60D /* HomeViewCell.swift in Sources */,
+				84C1084B2C47DEFE00AE231A /* NetworkService.swift in Sources */,
 				84BDFD332C356DE0003B65BC /* DetailApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,9 +492,12 @@
 			files = (
 				8428F7842C468AFC00E7CAE8 /* MockFavouriteStorageService.swift in Sources */,
 				8428F7882C46A30800E7CAE8 /* DetailStorageServiceTest.swift in Sources */,
+				84C1084F2C47E39900AE231A /* NetworkServiceStub.swift in Sources */,
 				8428F7822C468AF000E7CAE8 /* MockDetailStorageService.swift in Sources */,
 				8428F78A2C46C91C00E7CAE8 /* FavouriteStorageServiceTest.swift in Sources */,
+				84C108512C481AD400AE231A /* DetailApiServiceTest.swift in Sources */,
 				8428F7862C468D1100E7CAE8 /* InMemoryStorageProvider.swift in Sources */,
+				84C1082C2C47A99000AE231A /* HomeApiServiceTest.swift in Sources */,
 				843A67EC2C12021200B4C9E2 /* MVC_ArchitectureTests.swift in Sources */,
 				8428F77E2C468AC300E7CAE8 /* MockHomeApiService.swift in Sources */,
 				8428F7802C468ADA00E7CAE8 /* MockDetailApiService.swift in Sources */,

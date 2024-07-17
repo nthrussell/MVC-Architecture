@@ -20,16 +20,6 @@ class DefaultDetailApiService: DetailApiService {
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: PokemonDetailModel.self, decoder: JSONDecoder())
-            .mapError({ error in
-                switch error {
-                case is URLError:
-                    return NetworkError.badURL
-                case is DecodingError:
-                    return NetworkError.decodingError
-                default:
-                    return NetworkError.unknown
-                }
-            })
             .eraseToAnyPublisher()
     }
     
