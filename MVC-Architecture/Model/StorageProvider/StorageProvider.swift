@@ -6,13 +6,35 @@
 //
 import CoreData
 
+enum StoreType {
+    case inMemory, persisted
+}
+
 class StorageProvider {
     static let shared = StorageProvider()
+    
+    static var managedObjectModel: NSManagedObjectModel = {
+       let bundle = Bundle(for: StorageProvider.self)
+        guard let url = bundle.url(forResource: "PokemonDataModel", withExtension: "momd") else {
+            fatalError("Failed to find PokemonDataModel.momd")
+        }
+        
+        guard let model = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("Failed to load model from: \(url)")
+        }
+        
+        return model
+    }()
 
     var persistentContainer: NSPersistentContainer
     
-    init() {
-        persistentContainer = NSPersistentContainer(name: "PokemonDataModel")
+    init(storeType: StoreType = .persisted) { 
+        persistentContainer = NSPersistentContainer(name: "PokemonDataModel", managedObjectModel: Self.managedObjectModel)
+        
+        if storeType == .inMemory {
+            persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        }
+        
         persistentContainer.loadPersistentStores { description, error in
             if let error = error {
                 fatalError("CoreData failed to load with error:\(error)")

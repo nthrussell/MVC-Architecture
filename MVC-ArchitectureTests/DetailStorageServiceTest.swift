@@ -20,7 +20,7 @@ class DetailStorageServiceTest: XCTestCase {
     
     override func setUpWithError() throws {
         super.setUp()
-        storageProvider = InMemoryStorageProvider()
+        storageProvider = InMemoryStorageProvider(storeType: .inMemory)
         sut = DefaultDetailStorageService(storageProvider: storageProvider)
         firstData = PokemonDetailModel(
             height: 6,

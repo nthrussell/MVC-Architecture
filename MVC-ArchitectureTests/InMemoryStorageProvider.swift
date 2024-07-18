@@ -10,33 +10,16 @@ import CoreData
 
 @testable import MVC_Architecture
 
-class InMemoryStorageProvider: StorageProvider {
-    override init() {
-        super.init()
-        
-        let storageDescription = NSPersistentStoreDescription()
-        storageDescription.type = NSInMemoryStoreType
-        
-        let container = NSPersistentContainer(name: "PokemonDataModel")
-        container.persistentStoreDescriptions = [storageDescription]
-        container.loadPersistentStores { (description, error) in
-            if let error = error {
-                fatalError("Unable to load persistent stores: \(error)")
-            }
-        }
-        
-        persistentContainer = container
-    }
-}
+class InMemoryStorageProvider: StorageProvider { }
 
-extension InMemoryStorageProvider {
+extension StorageProvider {
     func saveData(data: PokemonDetailModel) {
         _ = data.mapToEntity(persistentContainer.viewContext)
         saveContext()
     }
 }
 
-extension InMemoryStorageProvider {
+extension StorageProvider {
     func deleteData(data: PokemonDetailModel) {
         delete(name: data.name)
     }
