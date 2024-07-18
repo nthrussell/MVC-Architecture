@@ -17,7 +17,7 @@ class DefaultDetailStorageService: DetailStorageService {
     
     var storageProvider: StorageProvider
     
-    required init(storageProvider: StorageProvider = StorageProvider.shared) {
+    required init(storageProvider: StorageProvider = StorageProvider()) {
         self.storageProvider = storageProvider
     }
     
@@ -37,6 +37,4 @@ class DefaultDetailStorageService: DetailStorageService {
     func saveOrDelete(with data: PokemonDetailModel) {
         checkIfFavourite(data: data) ? deleteData(data: data) : saveData(data: data)
     }
-    
-   
 }

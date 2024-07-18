@@ -29,10 +29,11 @@ class FavouriteViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = "My Favourites"
         self.view = favouriteView
         
+        let didSaveNotification = NSManagedObjectContext.didSaveObjectsNotification
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(contextObjectsDidChange),
-                                               name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
-                                               object: StorageProvider.shared.persistentContainer.viewContext)
+                                               selector: #selector(didSave),
+                                               name: didSaveNotification,
+                                               object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,7 +41,7 @@ class FavouriteViewController: UIViewController {
         deleteFavourite()
     }
     
-    @objc func contextObjectsDidChange() {
+    @objc func didSave() {
         getAllFavourites()
     }
     

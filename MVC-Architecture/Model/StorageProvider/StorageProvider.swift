@@ -10,9 +10,7 @@ enum StoreType {
     case inMemory, persisted
 }
 
-class StorageProvider {
-    static let shared = StorageProvider()
-    
+class StorageProvider {    
     var persistentContainer: NSPersistentContainer
     
     static var managedObjectModel: NSManagedObjectModel = {

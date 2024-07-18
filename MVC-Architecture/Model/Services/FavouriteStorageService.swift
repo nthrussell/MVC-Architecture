@@ -16,7 +16,7 @@ protocol FavouriteStorageService {
 class DefaultFavouriteStorageService: FavouriteStorageService {
     var storageProvider: StorageProvider
     
-    required init(storageProvider: StorageProvider = StorageProvider.shared) {
+    required init(storageProvider: StorageProvider = StorageProvider()) {
         self.storageProvider = storageProvider
     }
     
