@@ -13,6 +13,8 @@ enum StoreType {
 class StorageProvider {
     static let shared = StorageProvider()
     
+    var persistentContainer: NSPersistentContainer
+    
     static var managedObjectModel: NSManagedObjectModel = {
        let bundle = Bundle(for: StorageProvider.self)
         guard let url = bundle.url(forResource: "PokemonDataModel", withExtension: "momd") else {
@@ -26,7 +28,6 @@ class StorageProvider {
         return model
     }()
 
-    var persistentContainer: NSPersistentContainer
     
     init(storeType: StoreType = .persisted) { 
         persistentContainer = NSPersistentContainer(name: "PokemonDataModel", managedObjectModel: Self.managedObjectModel)

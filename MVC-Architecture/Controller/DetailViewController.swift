@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
         
     init(url: String, 
          detailApiService: DetailApiService = DefaultDetailApiService(),
-         detailStorageService: DetailStorageService = DefaultDetailStorageService(storageProvider: StorageProvider.shared)
+         detailStorageService: DetailStorageService = DefaultDetailStorageService()
     ) {
         self.url = url
         self.detailApiService = detailApiService

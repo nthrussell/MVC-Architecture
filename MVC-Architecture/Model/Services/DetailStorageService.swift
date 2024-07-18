@@ -17,7 +17,7 @@ class DefaultDetailStorageService: DetailStorageService {
     
     var storageProvider: StorageProvider
     
-    required init(storageProvider: StorageProvider) {
+    required init(storageProvider: StorageProvider = StorageProvider.shared) {
         self.storageProvider = storageProvider
     }
     
