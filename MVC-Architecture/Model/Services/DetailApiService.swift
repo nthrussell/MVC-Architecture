@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 protocol DetailApiService {
-    init(networkService: NetworkService)
     func fetchDetail(with url:String) -> AnyPublisher<PokemonDetailModel, Error>
 }
 
@@ -17,7 +16,7 @@ class DefaultDetailApiService: DetailApiService {
     
     let networkService: NetworkService
 
-    required init(networkService: NetworkService = URLSession.shared) {
+    init(networkService: NetworkService = URLSession.shared) {
         self.networkService = networkService
     }
     

@@ -27,13 +27,16 @@ class FavouriteViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.topItem?.title = "My Favourites"
-        self.view = favouriteView
         
         let didSaveNotification = NSManagedObjectContext.didSaveObjectsNotification
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didSave),
                                                name: didSaveNotification,
                                                object: nil)
+    }
+    
+    override func loadView() {
+        self.view = favouriteView
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -29,6 +29,9 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.topItem?.title = "Pokedex"
+    }
+    
+    override func loadView() {
         self.view = homeView
     }
     
@@ -60,7 +63,6 @@ class HomeViewController: UIViewController {
                 debugPrint("status is:\(status)")
             } receiveValue: { [weak self] payload in
                 guard let self = self else { return }
-                debugPrint("payload is:\(payload)")
                 homeView.pokemonList.append(contentsOf: payload.results)
                 homeView.reloadTebleView()
                 hasDataLoaded = true

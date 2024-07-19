@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		841533402C37C800005CB744 /* PokemonDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8415333E2C37C800005CB744 /* PokemonDataModel.xcdatamodeld */; };
 		841533432C37CA1E005CB744 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841533422C37CA1C005CB744 /* StorageProvider.swift */; };
-		8428F77E2C468AC300E7CAE8 /* MockHomeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F77D2C468ABA00E7CAE8 /* MockHomeApiService.swift */; };
-		8428F7802C468ADA00E7CAE8 /* MockDetailApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F77F2C468AD000E7CAE8 /* MockDetailApiService.swift */; };
+		8428F77E2C468AC300E7CAE8 /* HomeApiServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F77D2C468ABA00E7CAE8 /* HomeApiServiceStub.swift */; };
+		8428F7802C468ADA00E7CAE8 /* DetailApiServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F77F2C468AD000E7CAE8 /* DetailApiServiceStub.swift */; };
 		8428F7822C468AF000E7CAE8 /* MockDetailStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7812C468ADE00E7CAE8 /* MockDetailStorageService.swift */; };
 		8428F7842C468AFC00E7CAE8 /* MockFavouriteStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7832C468AF900E7CAE8 /* MockFavouriteStorageService.swift */; };
 		8428F7862C468D1100E7CAE8 /* InMemoryStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */; };
@@ -71,8 +71,8 @@
 /* Begin PBXFileReference section */
 		8415333F2C37C800005CB744 /* PokemonDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PokemonDataModel.xcdatamodel; sourceTree = "<group>"; };
 		841533422C37CA1C005CB744 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
-		8428F77D2C468ABA00E7CAE8 /* MockHomeApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeApiService.swift; sourceTree = "<group>"; };
-		8428F77F2C468AD000E7CAE8 /* MockDetailApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailApiService.swift; sourceTree = "<group>"; };
+		8428F77D2C468ABA00E7CAE8 /* HomeApiServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiServiceStub.swift; sourceTree = "<group>"; };
+		8428F77F2C468AD000E7CAE8 /* DetailApiServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApiServiceStub.swift; sourceTree = "<group>"; };
 		8428F7812C468ADE00E7CAE8 /* MockDetailStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailStorageService.swift; sourceTree = "<group>"; };
 		8428F7832C468AF900E7CAE8 /* MockFavouriteStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavouriteStorageService.swift; sourceTree = "<group>"; };
 		8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorageProvider.swift; sourceTree = "<group>"; };
@@ -153,8 +153,6 @@
 		8428F77C2C468AAA00E7CAE8 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				8428F77D2C468ABA00E7CAE8 /* MockHomeApiService.swift */,
-				8428F77F2C468AD000E7CAE8 /* MockDetailApiService.swift */,
 				8428F7812C468ADE00E7CAE8 /* MockDetailStorageService.swift */,
 				8428F7832C468AF900E7CAE8 /* MockFavouriteStorageService.swift */,
 			);
@@ -290,7 +288,7 @@
 		843A67EA2C12021200B4C9E2 /* MVC-ArchitectureTests */ = {
 			isa = PBXGroup;
 			children = (
-				84C1084E2C47E39600AE231A /* NetworkServiceStub.swift */,
+				84411CC62C4937AB007B89FC /* Stubs */,
 				8428F77C2C468AAA00E7CAE8 /* Mocks */,
 				8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */,
 				843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */,
@@ -309,6 +307,16 @@
 				843A67F72C12021200B4C9E2 /* MVC_ArchitectureUITestsLaunchTests.swift */,
 			);
 			path = "MVC-ArchitectureUITests";
+			sourceTree = "<group>";
+		};
+		84411CC62C4937AB007B89FC /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				84C1084E2C47E39600AE231A /* NetworkServiceStub.swift */,
+				8428F77D2C468ABA00E7CAE8 /* HomeApiServiceStub.swift */,
+				8428F77F2C468AD000E7CAE8 /* DetailApiServiceStub.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 		84636E042C403D3400C93AE7 /* App */ = {
@@ -499,8 +507,8 @@
 				8428F7862C468D1100E7CAE8 /* InMemoryStorageProvider.swift in Sources */,
 				84C1082C2C47A99000AE231A /* HomeApiServiceTest.swift in Sources */,
 				843A67EC2C12021200B4C9E2 /* MVC_ArchitectureTests.swift in Sources */,
-				8428F77E2C468AC300E7CAE8 /* MockHomeApiService.swift in Sources */,
-				8428F7802C468ADA00E7CAE8 /* MockDetailApiService.swift in Sources */,
+				8428F77E2C468AC300E7CAE8 /* HomeApiServiceStub.swift in Sources */,
+				8428F7802C468ADA00E7CAE8 /* DetailApiServiceStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
