@@ -10,7 +10,7 @@ import Combine
 
 class HomeViewController: UIViewController {
     
-    private var homeView = HomeView()
+    private var homeView: HomeView!
     private var homeApiService: HomeApiService
     var cancellable = Set<AnyCancellable>()
     var hasDataLoaded = false
@@ -32,28 +32,22 @@ class HomeViewController: UIViewController {
     }
     
     override func loadView() {
+        homeView = HomeView(fetchMoreData: fetchMoreData, onTap: navigate)
         self.view = homeView
     }
     
     override func viewDidAppear(_ animated: Bool) {
         callApi()
-        fetchMoreData()
-        navigate()
     }
     
-    func navigate() {
-        homeView.onTap = { url in
-            debugPrint("navigate url is:\(url)")
+    func navigate(url: String) {
             let vc = DetailViewController(url: url)
             self.show(vc, sender: self)
-        }
     }
     
     func fetchMoreData() {
-        homeView.fetchMoreData = {
             self.hasDataLoaded = false
             self.callApi()
-        }
     }
     
     func callApi() {

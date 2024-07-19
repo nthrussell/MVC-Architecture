@@ -38,9 +38,10 @@ class HomeView: UIView {
     var pokemonList: [PokemonList] = [PokemonList]()
     private(set) var filteredData: [PokemonList] = [PokemonList]()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .white
+    init(fetchMoreData: (() -> Void)?, onTap: ((_ url:String) -> Void)? ) {
+        self.fetchMoreData = fetchMoreData
+        self.onTap = onTap
+        super.init(frame: UIScreen.main.bounds)
         
         addSubview(searchBar)
         addSubview(tableView)
