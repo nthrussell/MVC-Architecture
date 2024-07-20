@@ -32,13 +32,13 @@ class HomeView: UIView {
         return aiView
     }()
     
-    var onTap: ((_ url:String) -> Void)?
-    var fetchMoreData: (() -> Void)?
+    var fetchMoreData: () -> Void
+    var onTap: (_ url:String) -> Void
 
     var pokemonList: [PokemonList] = [PokemonList]()
     private(set) var filteredData: [PokemonList] = [PokemonList]()
     
-    init(fetchMoreData: (() -> Void)?, onTap: ((_ url:String) -> Void)? ) {
+    init(fetchMoreData: @escaping () -> Void, onTap: @escaping (_ url:String) -> Void ) {
         self.fetchMoreData = fetchMoreData
         self.onTap = onTap
         super.init(frame: UIScreen.main.bounds)
@@ -107,7 +107,7 @@ extension HomeView: UITableViewDataSource {
         
         if (indexPath.row == pokemonList.count - 1) && (!isFiltering()){
             tableView.tableFooterView = activityindicatorView
-            fetchMoreData?()
+            fetchMoreData()
         }
         
         cell.nameLabel.text = data.name
@@ -132,7 +132,7 @@ extension HomeView: UITableViewDelegate {
         debugPrint("didSelectRow name = \(data.name)")
         debugPrint("didSelectRow url = \(data.url)")
 
-        onTap?(data.url)
+        onTap(data.url)
     }
 }
 

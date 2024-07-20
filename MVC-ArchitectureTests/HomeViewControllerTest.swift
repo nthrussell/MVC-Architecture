@@ -17,17 +17,17 @@ class HomeViewControllerTest: XCTestCase {
         var ifCalled = false
         var onTappUrl = ""
         
-        let fetchSpyClosure: () -> Void = {
+        func fetchMoreData() {
             ifCalled = true
         }
         
-        let onTapSpyClosure: ((_ url:String) -> Void)? = { url in
+        func navigate(url: String) {
             onTappUrl = url
         }
         
-        let homeView = HomeView(fetchMoreData: fetchSpyClosure, onTap: onTapSpyClosure)
-        homeView.fetchMoreData?()
-        homeView.onTap?("https://pokeapi.co/api/v2/pokemon/1/")
+        let homeView = HomeView(fetchMoreData: fetchMoreData, onTap: navigate)
+        homeView.fetchMoreData()
+        homeView.onTap("https://pokeapi.co/api/v2/pokemon/1/")
         
         XCTAssertTrue(ifCalled)
         XCTAssertEqual(onTappUrl, "https://pokeapi.co/api/v2/pokemon/1/")
