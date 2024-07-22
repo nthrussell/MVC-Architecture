@@ -11,7 +11,7 @@ import CoreData
 @testable import MVC_Architecture
 
 class FavouriteStorageServiceTest: XCTestCase {
-    var storageProvider: InMemoryStorageProvider!
+    var storageProvider: StorageProvider!
     var sut: FavouriteStorageService!
     
     var firstData: PokemonDetailModel!
@@ -20,7 +20,7 @@ class FavouriteStorageServiceTest: XCTestCase {
     
     override func setUpWithError() throws {
         super.setUp()
-        storageProvider = InMemoryStorageProvider(storeType: .inMemory)
+        storageProvider = StorageProvider(storeType: .inMemory)
         sut = DefaultFavouriteStorageService(storageProvider: storageProvider)
         firstData = PokemonDetailModel(
             height: 6,
@@ -46,7 +46,7 @@ class FavouriteStorageServiceTest: XCTestCase {
         firstData = nil
         secondData = nil
         thirdData = nil
-        super .tearDown()
+        super.tearDown()
     }
     
     func test_saveTwoData_getTwoBackFromDB() {

@@ -11,7 +11,7 @@ import CoreData
 @testable import MVC_Architecture
 
 class DetailStorageServiceTest: XCTestCase {
-    var storageProvider: InMemoryStorageProvider!
+    var storageProvider: StorageProvider!
     var sut: DetailStorageService!
     
     var firstData: PokemonDetailModel!
@@ -20,7 +20,7 @@ class DetailStorageServiceTest: XCTestCase {
     
     override func setUpWithError() throws {
         super.setUp()
-        storageProvider = InMemoryStorageProvider(storeType: .inMemory)
+        storageProvider = StorageProvider(storeType: .inMemory)
         sut = DefaultDetailStorageService(storageProvider: storageProvider)
         firstData = PokemonDetailModel(
             height: 6,

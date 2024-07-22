@@ -11,7 +11,7 @@ import Combine
 class HomeViewController: UIViewController {
     
     private var homeView: HomeView!
-    private var homeApiService: HomeApiService
+    var homeApiService: HomeApiService
     var cancellable = Set<AnyCancellable>()
     var hasDataLoaded = false
     

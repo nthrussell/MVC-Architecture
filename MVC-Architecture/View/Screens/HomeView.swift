@@ -96,7 +96,7 @@ extension HomeView: UITableViewDataSource {
             for: indexPath
         ) as! HomeViewCell
         
-        var data: PokemonList
+        var data: PokemonList 
         
         if isFiltering() {
             data = filteredData[indexPath.row]
@@ -129,8 +129,6 @@ extension HomeView: UITableViewDelegate {
         } else {
             data = pokemonList[indexPath.row]
         }
-        debugPrint("didSelectRow name = \(data.name)")
-        debugPrint("didSelectRow url = \(data.url)")
 
         onTap(data.url)
     }

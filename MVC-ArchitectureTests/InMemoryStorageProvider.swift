@@ -10,8 +10,6 @@ import CoreData
 
 @testable import MVC_Architecture
 
-class InMemoryStorageProvider: StorageProvider { }
-
 extension StorageProvider {
     func saveData(data: PokemonDetailModel) {
         _ = data.mapToEntity(persistentContainer.viewContext)

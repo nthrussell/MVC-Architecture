@@ -19,7 +19,6 @@ class HomeApiServiceStub: HomeApiService {
     
     func fetchPokemonList(offset: Int) -> AnyPublisher<PokemonListModel, Error> {
         return result.publisher
-            // Use some delay to simulate the real world async behavior
             .delay(for: 0.1, scheduler: RunLoop.main)
             .eraseToAnyPublisher()
     }

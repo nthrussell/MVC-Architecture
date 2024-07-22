@@ -11,9 +11,9 @@ import Combine
 class DetailViewController: UIViewController {
     
     var url: String
-    private var detailView = DetailView()
-    private var detailApiService: DetailApiService
-    private var detailStorageService: DetailStorageService
+    private var detailView: DetailView!
+    var detailApiService: DetailApiService
+    var detailStorageService: DetailStorageService
     var cancellable = Set<AnyCancellable>()
         
     init(url: String, 
@@ -36,12 +36,16 @@ class DetailViewController: UIViewController {
     }
     
     override func loadView() {
+        detailView = DetailView(onTap: observeButtonTap)
         self.view = detailView
     }
     
     override func viewDidAppear(_ animated: Bool) {
         callApi()
-        observeButtonTap()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        hideProgressSpinner()
     }
     
     override var hidesBottomBarWhenPushed: Bool {
@@ -49,16 +53,13 @@ class DetailViewController: UIViewController {
         set { super.hidesBottomBarWhenPushed = newValue }
     }
     
-    private func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel) {
+    func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel) {
         let data = detailStorageService.checkIfFavourite(data: data)
         detailView.favouriteButton.isSelected = data ? true : false
     }
     
-    private func observeButtonTap() {
-        detailView.onTap = { [weak self] data in
-           guard let self = self else { return }
-            detailStorageService.saveOrDelete(with: data)
-        }
+    func observeButtonTap(data:PokemonDetailModel) {
+        detailStorageService.saveOrDelete(with: data)
     }
     
     private func callApi() {

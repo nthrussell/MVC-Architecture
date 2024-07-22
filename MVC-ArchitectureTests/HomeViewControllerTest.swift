@@ -13,6 +13,17 @@ import Combine
 class HomeViewControllerTest: XCTestCase {
     var cancellables = Set<AnyCancellable>()
     
+    var sut: HomeViewController!
+    
+    override func setUpWithError() throws {
+        sut = HomeViewController()
+    }
+    
+    override func tearDownWithError() throws {
+        sut = nil
+        super.tearDown()
+    }
+    
     func test_if_homeView_closure_returns_an_url() {
         var ifCalled = false
         var onTappUrl = ""
@@ -48,12 +59,11 @@ class HomeViewControllerTest: XCTestCase {
         let pokemonDetailModel = try JSONDecoder().decode(PokemonListModel.self, from: data)
         XCTAssertEqual(pokemonDetailModel.results.count, 20)
         
-        
-        let apiService = HomeApiServiceStub(returning: .success(pokemonDetailModel))
+        sut.homeApiService = HomeApiServiceStub(returning: .success(pokemonDetailModel))
         
         let expectation = XCTestExpectation(description: "Data decoded to PokemonListModel")
 
-        apiService
+        sut.homeApiService
             .fetchPokemonList(offset: 0)
             .sink { _ in}
              receiveValue: { listModel in
@@ -70,11 +80,11 @@ class HomeViewControllerTest: XCTestCase {
     
     func test_whenHomeApiService_returnsAnError() {
         let expectedError = URLError(.cannotDecodeContentData)
-        let apiService = HomeApiServiceStub(returning: .failure(expectedError))
+        sut.homeApiService = HomeApiServiceStub(returning: .failure(expectedError))
         
         let expectation = XCTestExpectation(description: "Decoding error")
         
-        apiService
+        sut.homeApiService
             .fetchPokemonList(offset: 20)
             .sink { completion in
                 guard case let .failure(error) = completion else { return }

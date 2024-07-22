@@ -58,8 +58,10 @@ class DetailView: UIView {
     var onTap: ((_ data:PokemonDetailModel) -> Void)?
     var data: PokemonDetailModel?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(onTap: @escaping (_ data:PokemonDetailModel) -> Void ) {
+        self.onTap = onTap
+        super.init(frame: UIScreen.main.bounds)
+        
         backgroundColor = .white
         
         addSubview(containerView)
@@ -75,6 +77,24 @@ class DetailView: UIView {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         favouriteButton.addGestureRecognizer(gesture)
     }
+    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        backgroundColor = .white
+//        
+//        addSubview(containerView)
+//        
+//        containerView.addSubview(favouriteButton)
+//        containerView.addSubview(imageView)
+//        containerView.addSubview(nameLabel)
+//        containerView.addSubview(heightlabel)
+//        containerView.addSubview(weightlabel)
+//        
+//        setupLayout()
+//        
+//        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+//        favouriteButton.addGestureRecognizer(gesture)
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

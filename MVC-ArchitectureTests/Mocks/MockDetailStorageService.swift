@@ -10,13 +10,29 @@ import XCTest
 @testable import MVC_Architecture
 
 class MockDetailStorageService: DetailStorageService {
-    required init(storageProvider: MVC_Architecture.StorageProvider) { }
     
-    func checkIfFavourite(data: MVC_Architecture.PokemonDetailModel) -> Bool {
-        false
+    var storageProvider: StorageProvider
+    
+    required init(storageProvider: StorageProvider = StorageProvider(storeType: .inMemory)) {
+        self.storageProvider = storageProvider
     }
     
-    func saveOrDelete(with data: MVC_Architecture.PokemonDetailModel) {
-        
+    func saveData(data: PokemonDetailModel) {
+        _ = data.mapToEntity(storageProvider.persistentContainer.viewContext)
+        storageProvider.saveContext()
     }
+    
+    func deleteData(data: PokemonDetailModel) {
+        storageProvider.delete(name: data.name)
+    }
+    
+    func checkIfFavourite(data: PokemonDetailModel) -> Bool {
+        storageProvider.checkIfFavourite(name: data.name)
+    }
+    
+    func saveOrDelete(with data: PokemonDetailModel) {
+        checkIfFavourite(data: data) ? storageProvider.delete(name: data.name) : storageProvider.saveData(data: data)
+    }
+    
+    
 }
