@@ -11,7 +11,6 @@ import XCTest
 class HomeViewTest: XCTestCase {
     
     var sut: HomeView!
-    //var filteredData: [PokemonList] = [PokemonList]()
     
     override func setUpWithError() throws {
         func fetchMoreData() { }

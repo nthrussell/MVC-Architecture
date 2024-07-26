@@ -77,7 +77,9 @@ extension FavouriteView: UITableViewDelegate {
         if editingStyle == .delete {
             debugPrint("delete action clicked")
             let data = detailData[indexPath.row]
-            tapDelete?(data)
+            if let tapDelete = tapDelete {
+                tapDelete(data)
+            }
         }
     }
 }

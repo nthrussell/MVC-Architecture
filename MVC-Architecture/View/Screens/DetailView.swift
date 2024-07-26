@@ -17,17 +17,19 @@ class DetailView: UIView {
     
     private(set) lazy var favouriteButton:UIButton = {
         let button = UIButton()
+        button.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
+        button.isHidden = true
+        
         let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .semibold, scale: .large)
         button.setImage(UIImage(systemName: "heart", withConfiguration: config)?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .normal)
         button.setImage(UIImage(systemName: "heart.fill", withConfiguration: config)?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .selected)
+        
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.isHidden = true
         return button
     }()
     
     private(set) lazy var imageView:UIImageView = {
        let imageView = UIImageView()
-        //imageView.image = UIImage(named: "pokeImage")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -58,10 +60,8 @@ class DetailView: UIView {
     var onTap: ((_ data:PokemonDetailModel) -> Void)?
     var data: PokemonDetailModel?
     
-    init(onTap: @escaping (_ data:PokemonDetailModel) -> Void ) {
-        self.onTap = onTap
-        super.init(frame: UIScreen.main.bounds)
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         backgroundColor = .white
         
         addSubview(containerView)
@@ -73,36 +73,13 @@ class DetailView: UIView {
         containerView.addSubview(weightlabel)
         
         setupLayout()
-        
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
-        favouriteButton.addGestureRecognizer(gesture)
     }
-    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        backgroundColor = .white
-//        
-//        addSubview(containerView)
-//        
-//        containerView.addSubview(favouriteButton)
-//        containerView.addSubview(imageView)
-//        containerView.addSubview(nameLabel)
-//        containerView.addSubview(heightlabel)
-//        containerView.addSubview(weightlabel)
-//        
-//        setupLayout()
-//        
-//        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
-//        favouriteButton.addGestureRecognizer(gesture)
-//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func updateUI(data: PokemonDetailModel) {
-        self.data = data
-        
         nameLabel.text = data.name
         heightlabel.text = "height: \(data.height) cm"
         weightlabel.text = "weight: \(data.weight) gm"
@@ -110,6 +87,8 @@ class DetailView: UIView {
             imageView.getImage(from: URL(string: url)!)
         }
         favouriteButton.isHidden = false
+        
+        self.data = data
     }
     
     func updateImage(image: UIImage) {
@@ -156,7 +135,9 @@ class DetailView: UIView {
     @objc
     func tapAction() {
         favouriteButton.isSelected.toggle()
-        if let data = self.data { onTap?(data) }
+        if let data = self.data {
+            onTap?(data)
+        }
     }
 }
 
@@ -164,4 +145,5 @@ class DetailView: UIView {
 //    let vc = DetailViewController(url: "")
 //   return vc
 //}
+
 

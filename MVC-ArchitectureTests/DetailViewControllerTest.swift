@@ -27,27 +27,23 @@ class DetailViewControllerTest: XCTestCase {
         super.tearDown()
     }
     
-    func test_if_detailView_closure_returns_a_pokemonDetailModel() {
-        
-        let detailModel = PokemonDetailModel(
-            height: 6,
-            name: "bulbasur",
-            sprites: SpritesModel(frontDefault: ""),
-            weight: 7
+    func test_ifObserveOnTap_gets_a_pokemonDetailModel_and_saveItToFavourite() {
+        let data = PokemonDetailModel(
+            height: 5,
+            name: "test",
+            sprites: SpritesModel(frontDefault: "image url"),
+            weight: 9
         )
+                
+        let detailView = DetailView()
+        sut.detailView = detailView
         
-        let detailModel2 = PokemonDetailModel(
-            height: 3,
-            name: "vanesur",
-            sprites: SpritesModel(frontDefault: ""),
-            weight: 4
-        )
+        sut.observeOnTap()
         
-        let detailView = DetailView(onTap: sut.observeButtonTap)
-        detailView.onTap?(detailModel)
+        detailView.updateUI(data: data)
+        detailView.onTap?(data)
         
-        XCTAssertTrue(mockStorageService.checkIfFavourite(data: detailModel))
-        XCTAssertFalse(mockStorageService.checkIfFavourite(data: detailModel2))
+        XCTAssertTrue(mockStorageService.checkIfFavourite(data: data))
     }
     
     func test_whenFetchSuccessful_And_SaveAsFavourite_Successful() throws {
