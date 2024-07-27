@@ -10,7 +10,7 @@ import CoreData
 
 class FavouriteViewController: UIViewController {
 
-    private var favouriteView = FavouriteView()
+    var favouriteView = FavouriteView()
     private var favouriteStorageService: FavouriteStorageService
     
     init(favouriteStorageService: FavouriteStorageService = DefaultFavouriteStorageService()) {
@@ -30,7 +30,7 @@ class FavouriteViewController: UIViewController {
         
         let didSaveNotification = NSManagedObjectContext.didSaveObjectsNotification
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(didSave),
+                                               selector: #selector(didNewEntrySaved),
                                                name: didSaveNotification,
                                                object: nil)
     }
@@ -44,17 +44,17 @@ class FavouriteViewController: UIViewController {
         deleteFavourite()
     }
     
-    @objc func didSave() {
+    @objc func didNewEntrySaved() {
         getAllFavourites()
     }
     
-    private func getAllFavourites() {
+    func getAllFavourites() {
         let allData = favouriteStorageService.getAllFavourites()
         favouriteView.detailData = allData
         favouriteView.tableView.reloadData()
     }
     
-    private func deleteFavourite() {
+    func deleteFavourite() {
         favouriteView.tapDelete = { [weak self] data in
             guard let self = self else { return }
             favouriteStorageService.delete(data: data)

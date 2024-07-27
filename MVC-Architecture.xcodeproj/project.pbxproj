@@ -30,6 +30,7 @@
 		843A67EC2C12021200B4C9E2 /* MVC_ArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */; };
 		8444BC012C369AB5007AF43D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8444BC002C369AB5007AF43D /* Kingfisher */; };
 		8444BC052C36A55F007AF43D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444BC042C36A556007AF43D /* UIImageView+Extension.swift */; };
+		844936A62C554D2B00E7C94F /* FavouriteViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844936A52C554D2100E7C94F /* FavouriteViewControllerTest.swift */; };
 		844B2BA42C4E4AE900395FC6 /* DetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B2BA32C4E4AE100395FC6 /* DetailViewControllerTest.swift */; };
 		84636E012C40263300C93AE7 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84636E002C40263300C93AE7 /* FavouriteViewController.swift */; };
 		84636E032C40392F00C93AE7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84636E022C40392900C93AE7 /* BaseNavigationController.swift */; };
@@ -97,6 +98,7 @@
 		843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_ArchitectureTests.swift; sourceTree = "<group>"; };
 		843A67F12C12021200B4C9E2 /* MVC-ArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVC-ArchitectureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8444BC042C36A556007AF43D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		844936A52C554D2100E7C94F /* FavouriteViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewControllerTest.swift; sourceTree = "<group>"; };
 		844B2BA32C4E4AE100395FC6 /* DetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTest.swift; sourceTree = "<group>"; };
 		84636E002C40263300C93AE7 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		84636E022C40392900C93AE7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				84CC233A2C4AD08A00AEBB86 /* HomeViewTest.swift */,
 				844B2BA32C4E4AE100395FC6 /* DetailViewControllerTest.swift */,
 				84CD6C862C53EDC400223F59 /* DetailViewTest.swift */,
+				844936A52C554D2100E7C94F /* FavouriteViewControllerTest.swift */,
 			);
 			path = "MVC-ArchitectureTests";
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844936A62C554D2B00E7C94F /* FavouriteViewControllerTest.swift in Sources */,
 				8428F7842C468AFC00E7CAE8 /* MockFavouriteStorageService.swift in Sources */,
 				8428F7882C46A30800E7CAE8 /* DetailStorageServiceTest.swift in Sources */,
 				84C1084F2C47E39900AE231A /* NetworkServiceStub.swift in Sources */,
