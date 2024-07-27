@@ -46,7 +46,6 @@ class DetailViewTest: XCTestCase {
     }
     
     func test_onTap_succeed_when_touch_up_inside() {
-        // Given:
         let tapAddExpectation = expectation(description: "Button tap successful")
         
         let detailModelData = PokemonDetailModel(
@@ -61,10 +60,8 @@ class DetailViewTest: XCTestCase {
             tapAddExpectation.fulfill()
         }
       
-        // When:
         sut.favouriteButton.sendActions(for: .touchUpInside)
           
-        // Then:
         wait(for: [tapAddExpectation], timeout: 0.1)
         XCTAssertEqual(sut.favouriteButton.isSelected, true)
       }

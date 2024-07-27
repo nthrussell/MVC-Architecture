@@ -63,8 +63,8 @@ class DetailViewControllerTest: XCTestCase {
         let pokemonDetailModel = try JSONDecoder().decode(PokemonDetailModel.self, from: data)
         XCTAssertEqual(pokemonDetailModel.sprites.frontDefault, "some image url")
         
-        
-        sut.detailApiService = DetailApiServiceStub(returning: .success(pokemonDetailModel))
+        let detailApiServiceStub = DetailApiServiceStub(returning: .success(pokemonDetailModel))
+        sut.detailApiService = detailApiServiceStub
         
         let expectation = XCTestExpectation(description: "Data decoded to PokemonListModel")
 
@@ -72,6 +72,9 @@ class DetailViewControllerTest: XCTestCase {
             .fetchDetail(with: "some url")
             .sink { _ in}
              receiveValue: { detailModel in
+                 XCTAssertEqual(detailApiServiceStub.callCount, 1, "total call count")
+                 XCTAssertEqual(detailApiServiceStub.urls.first, "some url", "first url")
+
                  self.mockStorageService.saveData(data: detailModel)
                  
                  XCTAssertEqual(detailModel.name, "bulbasur")

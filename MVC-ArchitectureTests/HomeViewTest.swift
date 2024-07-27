@@ -16,7 +16,7 @@ class HomeViewTest: XCTestCase {
         func fetchMoreData() { }
         func onTap(url: String) { }
         
-        sut = HomeView(fetchMoreData: fetchMoreData, onTap: onTap)
+        sut = HomeView()
 
         let pokemonList = [
             PokemonList(name: "first", url: "first url"),

@@ -14,34 +14,18 @@ class HomeViewControllerTest: XCTestCase {
     var cancellables = Set<AnyCancellable>()
     
     var sut: HomeViewController!
+    var homeView: HomeView!
     
     override func setUpWithError() throws {
         sut = HomeViewController()
+        homeView = HomeView()
+        super.setUp()
     }
     
     override func tearDownWithError() throws {
         sut = nil
+        homeView = nil
         super.tearDown()
-    }
-    
-    func test_if_homeView_closure_returns_an_url() {
-        var ifCalled = false
-        var onTappUrl = ""
-        
-        func fetchMoreData() {
-            ifCalled = true
-        }
-        
-        func navigate(url: String) {
-            onTappUrl = url
-        }
-        
-        let homeView = HomeView(fetchMoreData: fetchMoreData, onTap: navigate)
-        homeView.fetchMoreData()
-        homeView.onTap("https://pokeapi.co/api/v2/pokemon/1/")
-        
-        XCTAssertTrue(ifCalled)
-        XCTAssertEqual(onTappUrl, "https://pokeapi.co/api/v2/pokemon/1/")
     }
     
     func test_whenFetchDataFromHomeApi_and_returnPokemonListModel_successful() throws {
@@ -59,7 +43,8 @@ class HomeViewControllerTest: XCTestCase {
         let pokemonDetailModel = try JSONDecoder().decode(PokemonListModel.self, from: data)
         XCTAssertEqual(pokemonDetailModel.results.count, 20)
         
-        sut.homeApiService = HomeApiServiceStub(returning: .success(pokemonDetailModel))
+        let homeApiServiceStub = HomeApiServiceStub(returning: .success(pokemonDetailModel))
+        sut.homeApiService = homeApiServiceStub
         
         let expectation = XCTestExpectation(description: "Data decoded to PokemonListModel")
 
@@ -67,6 +52,7 @@ class HomeViewControllerTest: XCTestCase {
             .fetchPokemonList(offset: 0)
             .sink { _ in}
              receiveValue: { listModel in
+                 XCTAssertEqual(homeApiServiceStub.callCount, 1, "total call count")
                  XCTAssertEqual(listModel.results.count, 20)
                  XCTAssertEqual(listModel.results.first?.name, "bulbasaur")
                  XCTAssertEqual(listModel.results.last?.name, "raticate")
