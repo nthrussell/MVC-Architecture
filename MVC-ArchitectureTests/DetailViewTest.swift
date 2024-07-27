@@ -12,7 +12,6 @@ class DetailViewTest: XCTestCase {
     var sut: DetailView!
     
     override func setUpWithError() throws {
-        func onTap(data:PokemonDetailModel) { }
         sut = DetailView()
     }
     
