@@ -106,6 +106,7 @@ extension HomeView: UITableViewDataSource {
         
         if (indexPath.row == pokemonList.count - 1) && (!isFiltering()){
             tableView.tableFooterView = activityindicatorView
+            activityindicatorView.startAnimating()
             if let fetchMoreData = fetchMoreData { fetchMoreData() }
         }
         
