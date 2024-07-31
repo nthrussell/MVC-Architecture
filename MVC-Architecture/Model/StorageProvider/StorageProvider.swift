@@ -60,7 +60,6 @@ extension StorageProvider {
         do {
             return try persistentContainer.viewContext.fetch(fetchRequest)
         } catch {
-            debugPrint("CoreData Delete Error:\(error)")
             return []
         }
     }

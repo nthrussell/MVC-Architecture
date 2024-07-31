@@ -40,7 +40,7 @@ extension PokemonDetailModel: ModelEntityMapProtocol {
                 weight: Int(entity.weight))
         }
         
-        let spriteModel: SpritesModel = sprite.map { SpritesModel.mapFromEntity($0 as! Sprite) }.first!
+        let spriteModel: SpritesModel = SpritesModel.mapFromEntity(sprite)
                 
         return .init(height: Int(entity.height),
                      name: entity.name ?? "",

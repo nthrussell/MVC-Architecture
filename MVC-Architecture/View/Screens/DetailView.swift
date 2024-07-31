@@ -15,19 +15,6 @@ class DetailView: UIView {
         return view
     }()
     
-    private(set) lazy var favouriteButton:UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
-        button.isHidden = true
-        
-        let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .semibold, scale: .large)
-        button.setImage(UIImage(systemName: "heart", withConfiguration: config)?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .normal)
-        button.setImage(UIImage(systemName: "heart.fill", withConfiguration: config)?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .selected)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     private(set) lazy var imageView:UIImageView = {
        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -57,6 +44,19 @@ class DetailView: UIView {
         return label
     }()
     
+    private(set) lazy var favouriteButton:UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
+        button.isHidden = true
+        
+        let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .semibold, scale: .large)
+        button.setImage(UIImage(systemName: "heart", withConfiguration: config)?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .normal)
+        button.setImage(UIImage(systemName: "heart.fill", withConfiguration: config)?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .selected)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     var onTap: ((_ data:PokemonDetailModel) -> Void)?
     var data: PokemonDetailModel?
     
@@ -66,11 +66,11 @@ class DetailView: UIView {
         
         addSubview(containerView)
         
-        containerView.addSubview(favouriteButton)
         containerView.addSubview(imageView)
         containerView.addSubview(nameLabel)
         containerView.addSubview(heightlabel)
         containerView.addSubview(weightlabel)
+        containerView.addSubview(favouriteButton)
         
         setupLayout()
     }
@@ -136,14 +136,11 @@ class DetailView: UIView {
     func tapAction() {
         favouriteButton.isSelected.toggle()
         if let data = self.data {
-            onTap?(data)
+            if let onTap = onTap {
+                onTap(data)
+            }
         }
     }
 }
-
-//#Preview {
-//    let vc = DetailViewController(url: "")
-//   return vc
-//}
 
 

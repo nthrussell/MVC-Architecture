@@ -57,7 +57,6 @@ extension FavouriteView: UITableViewDataSource {
         ) as! FavouriteViewCell
         
         let data = detailData[indexPath.row]
-        debugPrint("sprite data is:\(data)")
         
         if let url = data.sprites.frontDefault, (url != "") {
             cell.cellImageView.getImage(from: URL(string: url)!)
@@ -75,7 +74,6 @@ extension FavouriteView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            debugPrint("delete action clicked")
             let data = detailData[indexPath.row]
             if let tapDelete = tapDelete {
                 tapDelete(data)
@@ -83,7 +81,3 @@ extension FavouriteView: UITableViewDelegate {
         }
     }
 }
-
-//#Preview {
-//    FavouriteViewController(storageProvider: <#StorageProvider#>)
-//}

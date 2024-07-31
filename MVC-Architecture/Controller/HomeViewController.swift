@@ -42,22 +42,6 @@ class HomeViewController: UIViewController {
         navigate()
     }
     
-    func navigate() {
-        homeView.onTap = { [weak self] url in
-            guard let self = self else { return }
-            let vc = DetailViewController(url: url)
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
-    func fetchMoreData() {
-        homeView.fetchMoreData = { [weak self] in
-            guard let self = self else { return }
-            hasDataLoaded = false
-            callApi()
-        }
-    }
-    
     func callApi() {
         if hasDataLoaded { return }
         homeApiService.fetchPokemonList(offset: homeView.pokemonList.count)
@@ -70,5 +54,21 @@ class HomeViewController: UIViewController {
                 hasDataLoaded = true
             }
             .store(in: &cancellable)
+    }
+    
+    func fetchMoreData() {
+        homeView.fetchMoreData = { [weak self] in
+            guard let self = self else { return }
+            hasDataLoaded = false
+            callApi()
+        }
+    }
+    
+    func navigate() {
+        homeView.onTap = { [weak self] url in
+            guard let self = self else { return }
+            let vc = DetailViewController(url: url)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

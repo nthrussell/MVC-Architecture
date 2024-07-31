@@ -199,10 +199,10 @@
 		842C2F6A2C34522D009AF60D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				849889842C4111E000BB4E55 /* ModelEntityMapMrotocol.swift */,
 				842C2F6B2C345234009AF60D /* PokemonListModel.swift */,
 				84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */,
 				849889862C411B8F00BB4E55 /* SpritesMode.swift */,
+				849889842C4111E000BB4E55 /* ModelEntityMapMrotocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
