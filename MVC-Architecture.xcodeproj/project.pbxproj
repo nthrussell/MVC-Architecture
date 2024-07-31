@@ -40,7 +40,7 @@
 		849889812C41035B00BB4E55 /* FavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849889802C41035700BB4E55 /* FavouriteView.swift */; };
 		849889832C4103C500BB4E55 /* FavouriteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849889822C4103BE00BB4E55 /* FavouriteViewCell.swift */; };
 		849889852C4111F900BB4E55 /* ModelEntityMapMrotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849889842C4111E000BB4E55 /* ModelEntityMapMrotocol.swift */; };
-		849889872C411B9800BB4E55 /* SpritesMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849889862C411B8F00BB4E55 /* SpritesMode.swift */; };
+		849889872C411B9800BB4E55 /* SpritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849889862C411B8F00BB4E55 /* SpritesModel.swift */; };
 		84A819592C5A2F470001EC35 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A819582C5A2F420001EC35 /* NetworkProvider.swift */; };
 		84ADE6762C4AAB2500170B70 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADE6752C4AAB2200170B70 /* HomeViewControllerTest.swift */; };
 		84BDFD332C356DE0003B65BC /* DetailApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFD322C356DDB003B65BC /* DetailApiService.swift */; };
@@ -107,7 +107,7 @@
 		849889802C41035700BB4E55 /* FavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteView.swift; sourceTree = "<group>"; };
 		849889822C4103BE00BB4E55 /* FavouriteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewCell.swift; sourceTree = "<group>"; };
 		849889842C4111E000BB4E55 /* ModelEntityMapMrotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEntityMapMrotocol.swift; sourceTree = "<group>"; };
-		849889862C411B8F00BB4E55 /* SpritesMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpritesMode.swift; sourceTree = "<group>"; };
+		849889862C411B8F00BB4E55 /* SpritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpritesModel.swift; sourceTree = "<group>"; };
 		84A819582C5A2F420001EC35 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		84ADE6752C4AAB2200170B70 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
 		84BDFD322C356DDB003B65BC /* DetailApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApiService.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 			children = (
 				842C2F6B2C345234009AF60D /* PokemonListModel.swift */,
 				84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */,
-				849889862C411B8F00BB4E55 /* SpritesMode.swift */,
+				849889862C411B8F00BB4E55 /* SpritesModel.swift */,
 				849889842C4111E000BB4E55 /* ModelEntityMapMrotocol.swift */,
 			);
 			path = Models;
@@ -486,7 +486,7 @@
 				84BDFD352C356E81003B65BC /* PokemonDetailModel.swift in Sources */,
 				8498897F2C4102CF00BB4E55 /* UIViewController+Extension.swift in Sources */,
 				842C2F702C34526E009AF60D /* Constant.swift in Sources */,
-				849889872C411B9800BB4E55 /* SpritesMode.swift in Sources */,
+				849889872C411B9800BB4E55 /* SpritesModel.swift in Sources */,
 				843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */,
 				842C2F672C3451F9009AF60D /* DetailViewController.swift in Sources */,
 				84E859E72C465D71003737CC /* DetailStorageService.swift in Sources */,
