@@ -25,7 +25,6 @@ class StorageProvider {
         
         return model
     }()
-
     
     init(storeType: StoreType = .persisted) { 
         persistentContainer = NSPersistentContainer(name: "PokemonDataModel", managedObjectModel: Self.managedObjectModel)

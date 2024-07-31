@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-
 protocol HomeApiService {
     func fetchPokemonList(offset: Int) -> AnyPublisher<PokemonListModel, Error>
 }
@@ -29,6 +28,4 @@ class DefaultHomeApiService: HomeApiService {
             .decode(type: PokemonListModel.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
-    
-    
 }

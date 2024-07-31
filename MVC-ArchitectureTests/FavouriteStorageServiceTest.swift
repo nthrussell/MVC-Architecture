@@ -79,5 +79,4 @@ class FavouriteStorageServiceTest: XCTestCase {
         let secondValue = sut.getAllFavourites()
         XCTAssertEqual(secondValue.count, 1)
     }
-    
 }

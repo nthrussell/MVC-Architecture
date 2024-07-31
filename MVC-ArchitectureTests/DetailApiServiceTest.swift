@@ -26,7 +26,7 @@ class DetailApiServiceTest: XCTestCase {
         """
         
         let data = try XCTUnwrap(json.data(using: .utf8))
-        let apiService = DefaultDetailApiService(networkService: NetworkServiceStub(returning: .success(data)))
+        let apiService = DefaultDetailApiService(networkProvider: NetworkProviderStub(returning: .success(data)))
         
         let expectation = XCTestExpectation(description: "Data decoded to PokemonDetailModel")
         
@@ -50,7 +50,7 @@ class DetailApiServiceTest: XCTestCase {
     
     func test_whenDetailApiRequest_returnsAnError() {
         let expectedError = URLError(.badServerResponse)
-        let apiService = DefaultDetailApiService(networkService: NetworkServiceStub(returning: .failure(expectedError)))
+        let apiService = DefaultDetailApiService(networkProvider: NetworkProviderStub(returning: .failure(expectedError)))
         
         let expectation = XCTestExpectation(description: "Received an URLError")
         

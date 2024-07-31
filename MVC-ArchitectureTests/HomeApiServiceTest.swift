@@ -24,7 +24,7 @@ class HomeApiServiceTest: XCTestCase {
         """
         
         let data = try XCTUnwrap(json.data(using: .utf8))
-        let apiService = DefaultHomeApiService(networkService: NetworkServiceStub(returning: .success(data)))
+        let apiService = DefaultHomeApiService(networkProvider: NetworkProviderStub(returning: .success(data)))
         
         let expectation = XCTestExpectation(description: "Data decoded to PokemonListModel")
 
@@ -45,7 +45,7 @@ class HomeApiServiceTest: XCTestCase {
     
     func test_whenHomeApiRequest_returnsAnError() {
         let expectedError = URLError(.badServerResponse)
-        let apiService = DefaultHomeApiService(networkService: NetworkServiceStub(returning: .failure(expectedError)))
+        let apiService = DefaultHomeApiService(networkProvider: NetworkProviderStub(returning: .failure(expectedError)))
         
         let expectation = XCTestExpectation(description: "Received an URLError")
         

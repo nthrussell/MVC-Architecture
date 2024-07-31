@@ -46,7 +46,7 @@
 		84BDFD332C356DE0003B65BC /* DetailApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFD322C356DDB003B65BC /* DetailApiService.swift */; };
 		84BDFD352C356E81003B65BC /* PokemonDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */; };
 		84C1082C2C47A99000AE231A /* HomeApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1082B2C47A98B00AE231A /* HomeApiServiceTest.swift */; };
-		84C1084F2C47E39900AE231A /* NetworkServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1084E2C47E39600AE231A /* NetworkServiceStub.swift */; };
+		84C1084F2C47E39900AE231A /* NetworkProviderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1084E2C47E39600AE231A /* NetworkProviderStub.swift */; };
 		84C108512C481AD400AE231A /* DetailApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C108502C481ACD00AE231A /* DetailApiServiceTest.swift */; };
 		84CC233B2C4AD08F00AEBB86 /* HomeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC233A2C4AD08A00AEBB86 /* HomeViewTest.swift */; };
 		84CD6C872C53EDCD00223F59 /* DetailViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD6C862C53EDC400223F59 /* DetailViewTest.swift */; };
@@ -113,7 +113,7 @@
 		84BDFD322C356DDB003B65BC /* DetailApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApiService.swift; sourceTree = "<group>"; };
 		84BDFD342C356E80003B65BC /* PokemonDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailModel.swift; sourceTree = "<group>"; };
 		84C1082B2C47A98B00AE231A /* HomeApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiServiceTest.swift; sourceTree = "<group>"; };
-		84C1084E2C47E39600AE231A /* NetworkServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceStub.swift; sourceTree = "<group>"; };
+		84C1084E2C47E39600AE231A /* NetworkProviderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderStub.swift; sourceTree = "<group>"; };
 		84C108502C481ACD00AE231A /* DetailApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApiServiceTest.swift; sourceTree = "<group>"; };
 		84CC233A2C4AD08A00AEBB86 /* HomeViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTest.swift; sourceTree = "<group>"; };
 		84CD6C862C53EDC400223F59 /* DetailViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewTest.swift; sourceTree = "<group>"; };
@@ -313,7 +313,7 @@
 		84411CC62C4937AB007B89FC /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				84C1084E2C47E39600AE231A /* NetworkServiceStub.swift */,
+				84C1084E2C47E39600AE231A /* NetworkProviderStub.swift */,
 				8428F77D2C468ABA00E7CAE8 /* HomeApiServiceStub.swift */,
 				8428F77F2C468AD000E7CAE8 /* DetailApiServiceStub.swift */,
 			);
@@ -509,7 +509,7 @@
 				844936A62C554D2B00E7C94F /* FavouriteViewControllerTest.swift in Sources */,
 				8428F7842C468AFC00E7CAE8 /* MockFavouriteStorageService.swift in Sources */,
 				8428F7882C46A30800E7CAE8 /* DetailStorageServiceTest.swift in Sources */,
-				84C1084F2C47E39900AE231A /* NetworkServiceStub.swift in Sources */,
+				84C1084F2C47E39900AE231A /* NetworkProviderStub.swift in Sources */,
 				844936AA2C555B5900E7C94F /* FavouriteViewTest.swift in Sources */,
 				84CC233B2C4AD08F00AEBB86 /* HomeViewTest.swift in Sources */,
 				84CD6C872C53EDCD00223F59 /* DetailViewTest.swift in Sources */,

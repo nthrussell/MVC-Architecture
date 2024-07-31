@@ -10,7 +10,7 @@ import CoreData
 
 class FavouriteViewController: UIViewController {
 
-    var favouriteView = FavouriteView()
+    var favouriteView: FavouriteView!
     private var favouriteStorageService: FavouriteStorageService
     
     init(favouriteStorageService: FavouriteStorageService = DefaultFavouriteStorageService()) {
@@ -36,6 +36,7 @@ class FavouriteViewController: UIViewController {
     }
     
     override func loadView() {
+        favouriteView = FavouriteView()
         self.view = favouriteView
     }
     

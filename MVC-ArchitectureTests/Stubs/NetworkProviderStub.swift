@@ -10,7 +10,7 @@ import Combine
 
 @testable import MVC_Architecture
 
-class NetworkServiceStub: NetworkService {
+class NetworkProviderStub: NetworkProvider {
     
     private let result: Result<Data, URLError>
 
