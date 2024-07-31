@@ -13,6 +13,7 @@ class FavouriteViewControllerTest: XCTestCase {
     
     var sut: FavouriteViewController!
     var mockStorageService: MockFavouriteStorageService!
+    var favouriteView: FavouriteView!
     
     var firstData: PokemonDetailModel!
     var secondData: PokemonDetailModel!
@@ -21,6 +22,8 @@ class FavouriteViewControllerTest: XCTestCase {
     override func setUpWithError() throws {
         mockStorageService = MockFavouriteStorageService()
         sut = FavouriteViewController(favouriteStorageService: mockStorageService)
+        favouriteView = FavouriteView()
+        sut.favouriteView = favouriteView
         
         firstData = PokemonDetailModel(
             height: 6,
@@ -44,6 +47,7 @@ class FavouriteViewControllerTest: XCTestCase {
     override func tearDownWithError() throws {
         sut = nil
         mockStorageService = nil
+        favouriteView = nil
         firstData = nil
         secondData = nil
         thirdData = nil

@@ -13,7 +13,7 @@
 		8428F7802C468ADA00E7CAE8 /* DetailApiServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F77F2C468AD000E7CAE8 /* DetailApiServiceStub.swift */; };
 		8428F7822C468AF000E7CAE8 /* MockDetailStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7812C468ADE00E7CAE8 /* MockDetailStorageService.swift */; };
 		8428F7842C468AFC00E7CAE8 /* MockFavouriteStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7832C468AF900E7CAE8 /* MockFavouriteStorageService.swift */; };
-		8428F7862C468D1100E7CAE8 /* InMemoryStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */; };
+		8428F7862C468D1100E7CAE8 /* StorageProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7852C468D0700E7CAE8 /* StorageProvider+Extension.swift */; };
 		8428F7882C46A30800E7CAE8 /* DetailStorageServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7872C46A30400E7CAE8 /* DetailStorageServiceTest.swift */; };
 		8428F78A2C46C91C00E7CAE8 /* FavouriteStorageServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428F7892C46C91A00E7CAE8 /* FavouriteStorageServiceTest.swift */; };
 		842C2F652C3451C9009AF60D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C2F642C3451C3009AF60D /* HomeViewController.swift */; };
@@ -27,7 +27,6 @@
 		843A67D52C12021000B4C9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D42C12021000B4C9E2 /* AppDelegate.swift */; };
 		843A67D72C12021000B4C9E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67D62C12021000B4C9E2 /* SceneDelegate.swift */; };
 		843A67DE2C12021200B4C9E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A67DD2C12021200B4C9E2 /* Assets.xcassets */; };
-		843A67EC2C12021200B4C9E2 /* MVC_ArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */; };
 		8444BC012C369AB5007AF43D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8444BC002C369AB5007AF43D /* Kingfisher */; };
 		8444BC052C36A55F007AF43D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444BC042C36A556007AF43D /* UIImageView+Extension.swift */; };
 		844936A62C554D2B00E7C94F /* FavouriteViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844936A52C554D2100E7C94F /* FavouriteViewControllerTest.swift */; };
@@ -78,7 +77,7 @@
 		8428F77F2C468AD000E7CAE8 /* DetailApiServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApiServiceStub.swift; sourceTree = "<group>"; };
 		8428F7812C468ADE00E7CAE8 /* MockDetailStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailStorageService.swift; sourceTree = "<group>"; };
 		8428F7832C468AF900E7CAE8 /* MockFavouriteStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavouriteStorageService.swift; sourceTree = "<group>"; };
-		8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorageProvider.swift; sourceTree = "<group>"; };
+		8428F7852C468D0700E7CAE8 /* StorageProvider+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageProvider+Extension.swift"; sourceTree = "<group>"; };
 		8428F7872C46A30400E7CAE8 /* DetailStorageServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStorageServiceTest.swift; sourceTree = "<group>"; };
 		8428F7892C46C91A00E7CAE8 /* FavouriteStorageServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteStorageServiceTest.swift; sourceTree = "<group>"; };
 		842C2F642C3451C3009AF60D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +94,6 @@
 		843A67DD2C12021200B4C9E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843A67E22C12021200B4C9E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843A67E72C12021200B4C9E2 /* MVC-ArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVC-ArchitectureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_ArchitectureTests.swift; sourceTree = "<group>"; };
 		843A67F12C12021200B4C9E2 /* MVC-ArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVC-ArchitectureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8444BC042C36A556007AF43D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		844936A52C554D2100E7C94F /* FavouriteViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewControllerTest.swift; sourceTree = "<group>"; };
@@ -292,20 +290,12 @@
 		843A67EA2C12021200B4C9E2 /* MVC-ArchitectureTests */ = {
 			isa = PBXGroup;
 			children = (
+				84A8195D2C5A784E0001EC35 /* Helpers */,
 				84411CC62C4937AB007B89FC /* Stubs */,
 				8428F77C2C468AAA00E7CAE8 /* Mocks */,
-				8428F7852C468D0700E7CAE8 /* InMemoryStorageProvider.swift */,
-				843A67EB2C12021200B4C9E2 /* MVC_ArchitectureTests.swift */,
-				84C1082B2C47A98B00AE231A /* HomeApiServiceTest.swift */,
-				84C108502C481ACD00AE231A /* DetailApiServiceTest.swift */,
-				8428F7872C46A30400E7CAE8 /* DetailStorageServiceTest.swift */,
-				8428F7892C46C91A00E7CAE8 /* FavouriteStorageServiceTest.swift */,
-				84ADE6752C4AAB2200170B70 /* HomeViewControllerTest.swift */,
-				84CC233A2C4AD08A00AEBB86 /* HomeViewTest.swift */,
-				844B2BA32C4E4AE100395FC6 /* DetailViewControllerTest.swift */,
-				84CD6C862C53EDC400223F59 /* DetailViewTest.swift */,
-				844936A52C554D2100E7C94F /* FavouriteViewControllerTest.swift */,
-				844936A92C555B5200E7C94F /* FavouriteViewTest.swift */,
+				84A8195C2C5A781A0001EC35 /* ModelTest */,
+				84A8195B2C5A78160001EC35 /* ViewTest */,
+				84A8195A2C5A78140001EC35 /* ControllerTest */,
 			);
 			path = "MVC-ArchitectureTests";
 			sourceTree = "<group>";
@@ -335,6 +325,45 @@
 				84A819582C5A2F420001EC35 /* NetworkProvider.swift */,
 			);
 			path = NetworkProvider;
+			sourceTree = "<group>";
+		};
+		84A8195A2C5A78140001EC35 /* ControllerTest */ = {
+			isa = PBXGroup;
+			children = (
+				84ADE6752C4AAB2200170B70 /* HomeViewControllerTest.swift */,
+				844B2BA32C4E4AE100395FC6 /* DetailViewControllerTest.swift */,
+				844936A52C554D2100E7C94F /* FavouriteViewControllerTest.swift */,
+			);
+			path = ControllerTest;
+			sourceTree = "<group>";
+		};
+		84A8195B2C5A78160001EC35 /* ViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				84CC233A2C4AD08A00AEBB86 /* HomeViewTest.swift */,
+				84CD6C862C53EDC400223F59 /* DetailViewTest.swift */,
+				844936A92C555B5200E7C94F /* FavouriteViewTest.swift */,
+			);
+			path = ViewTest;
+			sourceTree = "<group>";
+		};
+		84A8195C2C5A781A0001EC35 /* ModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				84C1082B2C47A98B00AE231A /* HomeApiServiceTest.swift */,
+				84C108502C481ACD00AE231A /* DetailApiServiceTest.swift */,
+				8428F7872C46A30400E7CAE8 /* DetailStorageServiceTest.swift */,
+				8428F7892C46C91A00E7CAE8 /* FavouriteStorageServiceTest.swift */,
+			);
+			path = ModelTest;
+			sourceTree = "<group>";
+		};
+		84A8195D2C5A784E0001EC35 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8428F7852C468D0700E7CAE8 /* StorageProvider+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,11 +545,10 @@
 				8428F7822C468AF000E7CAE8 /* MockDetailStorageService.swift in Sources */,
 				8428F78A2C46C91C00E7CAE8 /* FavouriteStorageServiceTest.swift in Sources */,
 				84C108512C481AD400AE231A /* DetailApiServiceTest.swift in Sources */,
-				8428F7862C468D1100E7CAE8 /* InMemoryStorageProvider.swift in Sources */,
+				8428F7862C468D1100E7CAE8 /* StorageProvider+Extension.swift in Sources */,
 				84ADE6762C4AAB2500170B70 /* HomeViewControllerTest.swift in Sources */,
 				844B2BA42C4E4AE900395FC6 /* DetailViewControllerTest.swift in Sources */,
 				84C1082C2C47A99000AE231A /* HomeApiServiceTest.swift in Sources */,
-				843A67EC2C12021200B4C9E2 /* MVC_ArchitectureTests.swift in Sources */,
 				8428F77E2C468AC300E7CAE8 /* HomeApiServiceStub.swift in Sources */,
 				8428F7802C468ADA00E7CAE8 /* DetailApiServiceStub.swift in Sources */,
 			);

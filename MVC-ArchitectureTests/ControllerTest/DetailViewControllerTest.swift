@@ -15,15 +15,20 @@ class DetailViewControllerTest: XCTestCase {
     
     var sut: DetailViewController!
     var mockStorageService: MockDetailStorageService!
+    var detailView: DetailView!
     
     override func setUpWithError() throws {
         mockStorageService = MockDetailStorageService()
         sut = DetailViewController(url: "", detailStorageService: mockStorageService)
+        detailView = DetailView()
+        
+        sut.detailView = detailView
     }
     
     override func tearDownWithError() throws {
         sut = nil
         mockStorageService = nil
+        detailView = nil
         super.tearDown()
     }
     
@@ -34,9 +39,6 @@ class DetailViewControllerTest: XCTestCase {
             sprites: SpritesModel(frontDefault: "image url"),
             weight: 9
         )
-                
-        let detailView = DetailView()
-        sut.detailView = detailView
         
         sut.observeOnTap()
         
