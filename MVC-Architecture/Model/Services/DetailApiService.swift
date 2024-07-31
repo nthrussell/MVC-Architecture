@@ -14,16 +14,16 @@ protocol DetailApiService {
 
 class DefaultDetailApiService: DetailApiService {
     
-    let networkService: NetworkService
+    let networkProvider: NetworkProvider
 
-    init(networkService: NetworkService = URLSession.shared) {
-        self.networkService = networkService
+    init(networkProvider: NetworkProvider = URLSession.shared) {
+        self.networkProvider = networkProvider
     }
     
     func fetchDetail(with url:String) -> AnyPublisher<PokemonDetailModel, Error> {
         let url = URL(string: url)!
         
-        return networkService.load(URLRequest(url: url))
+        return networkProvider.load(URLRequest(url: url))
             .decode(type: PokemonDetailModel.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }

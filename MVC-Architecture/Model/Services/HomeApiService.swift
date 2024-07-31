@@ -14,10 +14,10 @@ protocol HomeApiService {
 }
 
 class DefaultHomeApiService: HomeApiService {
-    let networkService: NetworkService
+    let networkProvider: NetworkProvider
 
-    init(networkService: NetworkService = URLSession.shared) {
-        self.networkService = networkService
+    init(networkProvider: NetworkProvider = URLSession.shared) {
+        self.networkProvider = networkProvider
     }
     
     func fetchPokemonList(offset: Int) -> AnyPublisher<PokemonListModel, Error> {
@@ -25,7 +25,7 @@ class DefaultHomeApiService: HomeApiService {
         url.append(queryItems: [URLQueryItem(name: "limit", value: "\(20)"),
                                URLQueryItem(name: "offset", value: "\(offset)")])
         
-        return networkService.load(URLRequest(url: url))
+        return networkProvider.load(URLRequest(url: url))
             .decode(type: PokemonListModel.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
