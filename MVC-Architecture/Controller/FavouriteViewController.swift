@@ -45,10 +45,6 @@ class FavouriteViewController: UIViewController {
         deleteFavourite()
     }
     
-    @objc func didNewEntrySaved() {
-        getAllFavourites()
-    }
-    
     func getAllFavourites() {
         let allData = favouriteStorageService.getAllFavourites()
         favouriteView.detailData = allData
@@ -60,5 +56,9 @@ class FavouriteViewController: UIViewController {
             guard let self = self else { return }
             favouriteStorageService.delete(data: data)
         }
+    }
+    
+    @objc func didNewEntrySaved() {
+        getAllFavourites()
     }
 }

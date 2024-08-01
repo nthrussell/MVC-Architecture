@@ -54,18 +54,6 @@ class DetailViewController: UIViewController {
         set { super.hidesBottomBarWhenPushed = newValue }
     }
     
-    func observeOnTap() {
-        detailView.onTap = { [weak self] data in
-            guard let self = self else { return }
-            self.detailStorageService.saveOrDelete(with: data)
-        }
-    }
-    
-    func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel) {
-        let data = detailStorageService.checkIfFavourite(data: data)
-        detailView.favouriteButton.isSelected = data ? true : false
-    }
-    
     func callApi() {
         showProgressSpinner()
         detailApiService
@@ -81,4 +69,18 @@ class DetailViewController: UIViewController {
             }
             .store(in: &cancellable)
     }
+    
+    func observeOnTap() {
+        detailView.onTap = { [weak self] data in
+            guard let self = self else { return }
+            self.detailStorageService.saveOrDelete(with: data)
+        }
+    }
+    
+    func checkIfPokemonIsInFavouriteList(data: PokemonDetailModel) {
+        let data = detailStorageService.checkIfFavourite(data: data)
+        detailView.favouriteButton.isSelected = data ? true : false
+    }
+    
+  
 }
