@@ -49,7 +49,7 @@ class DetailStorageServiceTest: XCTestCase {
         super .tearDown()
     }
     
-    func test_SaveTwoDataOnDB_ShouldReturnTwoData() {
+    func test_saveTwoDataOnDB_shouldReturnTwoDataFromDB() {
         storageProvider.saveData(data:firstData)
         storageProvider.saveData(data:secondData)
 
@@ -57,7 +57,7 @@ class DetailStorageServiceTest: XCTestCase {
         XCTAssertEqual(value.count, 2)
     }
     
-    func test_SaveThreeDataOnDB_DeleteOneFromDB_ShouldReturnTwoData() {
+    func test_saveThreeDataOnDB_deleteOneFromDB_shouldReturnTwoDataFromDB() {
         storageProvider.saveData(data:firstData)
         storageProvider.saveData(data:secondData)
         storageProvider.saveData(data:thirdData)
@@ -70,7 +70,7 @@ class DetailStorageServiceTest: XCTestCase {
         XCTAssertEqual(secondValue.count, 2)
     }
     
-    func test_SaveOneDataOnDB_CheckIfThatNameExists() {
+    func test_saveOneDataOnDB_checkIfThatNameExists() {
         storageProvider.saveData(data: secondData)
         
         let value = storageProvider.getAllData()
@@ -81,7 +81,7 @@ class DetailStorageServiceTest: XCTestCase {
         XCTAssertFalse(sut.checkIfFavourite(data: thirdData))
     }
     
-    func test_SaveOrDelete() {
+    func test_saveOrDelete() {
         storageProvider.saveData(data: firstData)
         storageProvider.saveData(data: secondData)
         

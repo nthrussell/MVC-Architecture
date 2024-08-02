@@ -11,11 +11,12 @@ import XCTest
 
 class FavouriteViewTest: XCTestCase {
     var sut: FavouriteView!
+    var detailData: [PokemonDetailModel]!
     
     override func setUpWithError() throws {
         sut = FavouriteView()
         
-        let detailData = [
+        detailData = [
             PokemonDetailModel(
                 height: 5,
                 name: "test1",
@@ -38,6 +39,7 @@ class FavouriteViewTest: XCTestCase {
     
     override func tearDownWithError() throws {
         sut = nil
+        detailData = nil
         super .tearDown()
     }
     

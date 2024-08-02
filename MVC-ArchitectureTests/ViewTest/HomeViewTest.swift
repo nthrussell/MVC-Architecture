@@ -11,6 +11,7 @@ import XCTest
 class HomeViewTest: XCTestCase {
     
     var sut: HomeView!
+    var pokemonList: [PokemonList]!
     
     override func setUpWithError() throws {
         func fetchMoreData() { }
@@ -18,7 +19,7 @@ class HomeViewTest: XCTestCase {
         
         sut = HomeView()
 
-        let pokemonList = [
+        pokemonList = [
             PokemonList(name: "first", url: "first url"),
             PokemonList(name: "second", url: "second url"),
             PokemonList(name: "third", url: "third url"),
@@ -31,6 +32,7 @@ class HomeViewTest: XCTestCase {
     
     override func tearDownWithError() throws {
         sut = nil
+        pokemonList = nil
         super .tearDown()
     }
     
@@ -40,7 +42,7 @@ class HomeViewTest: XCTestCase {
         XCTAssertNotNil(sut.activityindicatorView)
     }
     
-    func test_tableView_whenModelHasFiveList_shouldBeFiveRow() {
+    func test_tableView_whenModelHasFiveElement_shouldHaveFiveRow() {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 5)
     }
     
